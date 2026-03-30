@@ -6,9 +6,67 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.collections.FXCollections?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.CyberSecurityOfficer.InvestigateSuspiciousActivitiesController"
             prefHeight="400.0" prefWidth="600.0">
 
+    <!-- Title -->
+    <Label layoutX="20.0" layoutY="10.0" text="Investigate Suspicious Activities" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <!-- Suspicious Log Table Placeholder -->
+    <Label layoutX="20.0" layoutY="50.0" text="Suspicious Logs:" />
+    <TableView fx:id="logsTable" layoutX="20.0" layoutY="70.0" prefWidth="560.0" prefHeight="120.0">
+        <columns>
+            <TableColumn text="Source" fx:id="sourceColumn" prefWidth="180.0" maxWidth="1800.0" minWidth="30.0"/>
+            <TableColumn text="Action" fx:id="actionColumn" prefWidth="180.0" maxWidth="1800.0" minWidth="30.0"/>
+            <TableColumn text="Timestamp" fx:id="timestampColumn" prefWidth="180.0" maxWidth="1800.0" minWidth="30.0"/>
+        </columns>
+    </TableView>
+
+    <!-- Investigate Button -->
+    <Button fx:id="investigateButton" layoutX="480.0" layoutY="200.0" text="Investigate" prefWidth="100" />
+
+    <!-- Detailed Activity Section -->
+    <Label layoutX="20.0" layoutY="240.0" text="Investigation Details:" style="-fx-font-weight: bold;" />
+
+    <GridPane layoutX="20.0" layoutY="260.0" hgap="10" vgap="10">
+
+        <!-- Investigator Name -->
+        <Label text="Investigator:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="investigatorField" promptText="Enter your name" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <!-- Severity Level -->
+        <Label text="Severity Level:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <HBox spacing="10" GridPane.rowIndex="1" GridPane.columnIndex="1">
+            <RadioButton fx:id="lowRadio" text="Low" toggleGroup="$severityGroup"/>
+            <RadioButton fx:id="mediumRadio" text="Medium" toggleGroup="$severityGroup"/>
+            <RadioButton fx:id="highRadio" text="High" toggleGroup="$severityGroup"/>
+        </HBox>
+
+        <!-- Category -->
+        <Label text="Category:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="categoryComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Unauthorized Access"/>
+                    <String fx:value="Malware"/>
+                    <String fx:value="Phishing"/>
+                    <String fx:value="Suspicious Behavior"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <!-- Password (example if needed for secure notes) -->
+        <Label text="Password:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <PasswordField fx:id="passwordField" promptText="Enter password" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <!-- Investigation Notes -->
+        <Label text="Notes:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextArea fx:id="notesArea" promptText="Enter investigation notes here..." prefRowCount="4" prefColumnCount="20" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Save Investigation Record -->
+    <Button fx:id="saveButton" layoutX="480.0" layoutY="360.0" text="Save Record" prefWidth="100"/>
 </AnchorPane>
