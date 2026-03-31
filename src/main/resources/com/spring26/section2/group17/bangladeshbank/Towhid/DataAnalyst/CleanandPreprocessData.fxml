@@ -14,7 +14,7 @@
 
     <!-- Title -->
     <Label layoutX="20.0" layoutY="10.0"
-           text="Clean & Preprocess Data"
+           text="Clean &amp; Preprocess Data"
            style="-fx-font-size:18px; -fx-font-weight:bold;" />
 
     <!-- Dataset Selection Table -->
@@ -38,13 +38,12 @@
 
     <!-- Preprocessing Options -->
     <Label layoutX="20.0" layoutY="220.0"
-           text="Preprocessing Options:" style="-fx-font-weight:bold;" />
+           text="Preprocessing Options:"
+           style="-fx-font-weight:bold;" />
 
     <VBox layoutX="20.0" layoutY="250.0" spacing="10">
-
         <CheckBox fx:id="removeNullCheckBox" text="Remove Null Values"/>
         <CheckBox fx:id="normalizeCheckBox" text="Normalize Data"/>
-
     </VBox>
 
     <!-- Additional Options -->
