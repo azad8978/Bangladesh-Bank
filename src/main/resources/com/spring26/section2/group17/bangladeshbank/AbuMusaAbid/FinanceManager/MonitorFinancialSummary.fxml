@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.FinanceManager.MonitorFinancialSummaryController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="450.0" prefWidth="700.0">
+
+    <!-- Title -->
+    <Label layoutX="220.0" layoutY="10.0"
+           text="Financial Overview Dashboard"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Time Period Selection -->
+    <Label layoutX="50.0" layoutY="50.0" text="Time Period:"/>
+    <ComboBox fx:id="timePeriodCombo" layoutX="150.0" layoutY="45.0" prefWidth="150.0"/>
+
+    <Button fx:id="updateButton" layoutX="320.0" layoutY="45.0"
+            text="Update" prefWidth="80.0"/>
+
+    <!-- Revenue BarChart -->
+    <BarChart fx:id="revenueChart" layoutX="50.0" layoutY="90.0"
+              prefWidth="300.0" prefHeight="200.0">
+        <xAxis>
+            <CategoryAxis label="Category"/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Revenue"/>
+        </yAxis>
+    </BarChart>
+
+    <!-- Expenditure PieChart -->
+    <PieChart fx:id="expenditureChart"
+              layoutX="380.0" layoutY="90.0"
+              prefWidth="250.0" prefHeight="200.0"/>
+
+    <!-- Summary Metrics -->
+    <Label layoutX="50.0" layoutY="310.0" text="Total Revenue:"/>
+    <Label fx:id="totalRevenueLabel" layoutX="180.0" layoutY="310.0" text="0"/>
+
+    <Label layoutX="50.0" layoutY="340.0" text="Total Expenditure:"/>
+    <Label fx:id="totalExpenditureLabel" layoutX="200.0" layoutY="340.0" text="0"/>
+
+    <Label layoutX="50.0" layoutY="370.0" text="Net Profit/Loss:"/>
+    <Label fx:id="netResultLabel" layoutX="190.0" layoutY="370.0" text="0"/>
 
 </AnchorPane>

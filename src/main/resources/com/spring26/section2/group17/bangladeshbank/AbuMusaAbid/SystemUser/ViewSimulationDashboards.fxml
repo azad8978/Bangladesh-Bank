@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.SystemUser.ViewSimulationDashboardsController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="500.0" prefWidth="700.0">
+
+    <!-- Title -->
+    <Label layoutX="220.0" layoutY="10.0" text="Simulation Dashboard" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Filters -->
+    <Label layoutX="50.0" layoutY="50.0" text="Time Period:"/>
+    <ComboBox fx:id="timePeriodCombo" layoutX="150.0" layoutY="45.0" prefWidth="150.0"/>
+
+    <Label layoutX="320.0" layoutY="50.0" text="Scenario:"/>
+    <ComboBox fx:id="scenarioCombo" layoutX="400.0" layoutY="45.0" prefWidth="150.0"/>
+
+    <Button fx:id="applyButton" layoutX="570.0" layoutY="45.0" text="Apply" prefWidth="80.0"/>
+
+    <!-- Line Chart -->
+    <LineChart fx:id="lineChart" layoutX="50.0" layoutY="90.0" prefWidth="300.0" prefHeight="180.0">
+        <xAxis>
+            <CategoryAxis label="Time"/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Value"/>
+        </yAxis>
+    </LineChart>
+
+    <!-- Bar Chart -->
+    <BarChart fx:id="barChart" layoutX="370.0" layoutY="90.0" prefWidth="300.0" prefHeight="180.0">
+        <xAxis>
+            <CategoryAxis label="Scenario"/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Value"/>
+        </yAxis>
+    </BarChart>
+
+    <!-- TableView for Simulation Data -->
+    <TableView fx:id="simulationTable" layoutX="50.0" layoutY="290.0" prefWidth="620.0" prefHeight="180.0">
+        <columns>
+            <TableColumn text="Parameter" prefWidth="200.0"/>
+            <TableColumn text="Value" prefWidth="200.0"/>
+            <TableColumn text="Status" prefWidth="220.0"/>
+        </columns>
+    </TableView>
 
 </AnchorPane>
