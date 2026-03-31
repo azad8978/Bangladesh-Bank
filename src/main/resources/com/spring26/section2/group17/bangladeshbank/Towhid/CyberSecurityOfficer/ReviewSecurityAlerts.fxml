@@ -2,6 +2,7 @@
 
 <?import java.lang.*?>
 <?import java.util.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -10,5 +11,79 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.CyberSecurityOfficer.ReviewSecurityAlertsController"
             prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Title -->
+    <Label layoutX="20.0" layoutY="10.0"
+           text="Review Security Alerts"
+           style="-fx-font-size:18px; -fx-font-weight:bold;" />
+
+    <!-- Alerts Table -->
+    <Label layoutX="20.0" layoutY="40.0" text="Security Alerts:" />
+    <TableView fx:id="alertsTable"
+               layoutX="20.0" layoutY="60.0"
+               prefHeight="140.0" prefWidth="560.0">
+
+        <columns>
+            <TableColumn fx:id="alertIdColumn" text="Alert ID" prefWidth="120"/>
+            <TableColumn fx:id="typeColumn" text="Alert Type" prefWidth="150"/>
+            <TableColumn fx:id="severityColumn" text="Severity" prefWidth="120"/>
+            <TableColumn fx:id="timeColumn" text="Timestamp" prefWidth="170"/>
+        </columns>
+    </TableView>
+
+    <!-- View Details Button -->
+    <Button fx:id="viewButton"
+            layoutX="450.0" layoutY="210.0"
+            text="View Details"
+            prefWidth="130"/>
+
+    <!-- Alert Details Section -->
+    <Label layoutX="20.0" layoutY="240.0"
+           text="Alert Details:" style="-fx-font-weight:bold;" />
+
+    <GridPane layoutX="20.0" layoutY="260.0" hgap="10" vgap="10">
+
+        <!-- Alert ID -->
+        <Label text="Alert ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="alertIdField"
+                   promptText="Selected alert ID"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <!-- Alert Type -->
+        <Label text="Type:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="alertTypeField"
+                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <!-- Severity -->
+        <Label text="Severity:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="1">
+            <RadioButton fx:id="lowRadio" text="Low" toggleGroup="$severityGroup"/>
+            <RadioButton fx:id="mediumRadio" text="Medium" toggleGroup="$severityGroup"/>
+            <RadioButton fx:id="highRadio" text="High" toggleGroup="$severityGroup"/>
+        </HBox>
+
+        <!-- Timestamp -->
+        <Label text="Timestamp:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="timestampField"
+                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <!-- Notes -->
+        <Label text="Notes:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextArea fx:id="notesArea"
+                  promptText="Write review notes..."
+                  prefRowCount="3"
+                  GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Action Buttons -->
+    <Button fx:id="reviewButton"
+            layoutX="350.0" layoutY="360.0"
+            text="Mark as Reviewed"
+            prefWidth="150"/>
+
+    <Button fx:id="clearButton"
+            layoutX="510.0" layoutY="360.0"
+            text="Clear"
+            prefWidth="70"/>
 
 </AnchorPane>

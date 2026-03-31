@@ -2,6 +2,7 @@
 
 <?import java.lang.*?>
 <?import java.util.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -10,5 +11,64 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.GenerateStatisticalSummariesController"
             prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Title -->
+    <Label layoutX="20.0" layoutY="10.0"
+           text="Generate Statistical Summaries"
+           style="-fx-font-size:18px; -fx-font-weight:bold;" />
+
+    <!-- Statistics Button -->
+    <Button fx:id="statsButton"
+            layoutX="450.0" layoutY="10.0"
+            text="Statistics"
+            prefWidth="120"/>
+
+    <!-- Metric Selection -->
+    <Label layoutX="20.0" layoutY="50.0"
+           text="Select Metrics:" style="-fx-font-weight:bold;" />
+
+    <VBox layoutX="20.0" layoutY="80.0" spacing="10">
+
+        <CheckBox fx:id="meanCheckBox" text="Mean"/>
+        <CheckBox fx:id="medianCheckBox" text="Median"/>
+        <CheckBox fx:id="modeCheckBox" text="Mode"/>
+        <CheckBox fx:id="stdDevCheckBox" text="Standard Deviation"/>
+
+    </VBox>
+
+    <!-- Data Type Selection -->
+    <Label layoutX="200.0" layoutY="50.0" text="Data Type:" />
+    <ComboBox fx:id="dataTypeComboBox"
+              layoutX="200.0" layoutY="70.0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Numeric"/>
+                <String fx:value="Categorical"/>
+                <String fx:value="Time Series"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <!-- Input Data -->
+    <Label layoutX="20.0" layoutY="200.0" text="Input Data:" />
+    <TextArea fx:id="inputDataArea"
+              layoutX="20.0" layoutY="220.0"
+              prefWidth="560.0" prefHeight="60.0"
+              promptText="Enter data (e.g., 10, 20, 30...)" />
+
+    <!-- Result Area -->
+    <Label layoutX="20.0" layoutY="290.0"
+           text="Statistical Summary:" style="-fx-font-weight:bold;" />
+
+    <TextArea fx:id="resultArea"
+              layoutX="20.0" layoutY="310.0"
+              prefWidth="560.0" prefHeight="60.0"
+              promptText="Results will be displayed here..." />
+
+    <!-- Generate Button -->
+    <Button fx:id="generateButton"
+            layoutX="450.0" layoutY="380.0"
+            text="Generate"
+            prefWidth="120"/>
 
 </AnchorPane>

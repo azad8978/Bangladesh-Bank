@@ -2,6 +2,7 @@
 
 <?import java.lang.*?>
 <?import java.util.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -9,6 +10,73 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.AccessAnalyticalDatasetsController"
-            prefHeight="400.0" prefWidth="600.0" >
+            prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Title -->
+    <Label layoutX="20.0" layoutY="10.0"
+           text="Access Analytical Datasets"
+           style="-fx-font-size:18px; -fx-font-weight:bold;" />
+
+    <!-- Dataset Table -->
+    <Label layoutX="20.0" layoutY="40.0" text="Available Datasets:" />
+    <TableView fx:id="datasetTable"
+               layoutX="20.0" layoutY="60.0"
+               prefHeight="150.0" prefWidth="560.0">
+
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Dataset Name" prefWidth="200"/>
+            <TableColumn fx:id="typeColumn" text="Data Type" prefWidth="180"/>
+            <TableColumn fx:id="timeColumn" text="Time Period" prefWidth="180"/>
+        </columns>
+    </TableView>
+
+    <!-- Load Preview Button -->
+    <Button fx:id="previewButton"
+            layoutX="450.0" layoutY="220.0"
+            text="Load Preview"
+            prefWidth="130"/>
+
+    <!-- Selected Dataset Info -->
+    <Label layoutX="20.0" layoutY="250.0"
+           text="Selected Dataset Info:"
+           style="-fx-font-weight:bold;" />
+
+    <GridPane layoutX="20.0" layoutY="270.0" hgap="10" vgap="10">
+
+        <!-- Dataset Name -->
+        <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="nameField"
+                   promptText="Dataset name"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <!-- Data Type -->
+        <Label text="Type:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="typeComboBox"
+                  GridPane.rowIndex="1" GridPane.columnIndex="1">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Numeric"/>
+                    <String fx:value="Categorical"/>
+                    <String fx:value="Time Series"/>
+                    <String fx:value="Mixed"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <!-- Time Period -->
+        <Label text="Time Period:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="timeField"
+                   promptText="e.g. 2020-2025"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Dataset Preview Area -->
+    <Label layoutX="20.0" layoutY="330.0"
+           text="Dataset Preview:" style="-fx-font-weight:bold;" />
+
+    <TextArea fx:id="previewArea"
+              layoutX="20.0" layoutY="350.0"
+              prefWidth="560.0" prefHeight="40.0"
+              promptText="Dataset preview will appear here..." />
 
 </AnchorPane>
