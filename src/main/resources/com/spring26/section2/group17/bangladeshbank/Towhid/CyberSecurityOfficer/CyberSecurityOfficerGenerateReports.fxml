@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.CyberSecurityOfficer.CyberSecurityOfficerGenerateReportsController"
+            prefHeight="550.0" prefWidth="850.0">
+
+    <children>
+
+        <!-- Title -->
+        <Label layoutX="250.0" layoutY="20.0"
+               text="Generate Security Reports"
+               style="-fx-font-size:18px; -fx-font-weight:bold;" />
+
+        <!-- Event 2: Report Type -->
+        <Label layoutX="50.0" layoutY="90.0" text="Report Type:" />
+        <ComboBox fx:id="reportTypeComboBox"
+                  layoutX="180.0"
+                  layoutY="85.0"
+                  prefWidth="250.0" />
+
+        <!-- Event 3: Date Range -->
+        <Label layoutX="50.0" layoutY="140.0" text="Start Date:" />
+        <DatePicker fx:id="startDate"
+                    layoutX="180.0"
+                    layoutY="135.0" />
+
+        <Label layoutX="50.0" layoutY="190.0" text="End Date:" />
+        <DatePicker fx:id="endDate"
+                    layoutX="180.0"
+                    layoutY="185.0" />
+
+        <!-- Event 4: Generate Button -->
+        <Button fx:id="generateButton"
+                layoutX="300.0"
+                layoutY="240.0"
+                text="Generate Report"
+                prefWidth="180.0" />
+
+        <!-- Event 5: Report Output Table -->
+        <Label layoutX="50.0" layoutY="290.0"
+               text="Report Data:"
+               style="-fx-font-weight:bold;" />
+
+        <TableView fx:id="reportTable"
+                   layoutX="50.0"
+                   layoutY="320.0"
+                   prefWidth="750.0"
+                   prefHeight="150.0">
+
+            <columns>
+                <TableColumn text="Parameter" prefWidth="250.0" />
+                <TableColumn text="Value" prefWidth="200.0" />
+                <TableColumn text="Status" prefWidth="300.0" />
+            </columns>
+
+        </TableView>
+
+        <!-- Summary -->
+        <Label layoutX="50.0" layoutY="480.0"
+               text="Summary:"
+               style="-fx-font-weight:bold;" />
+
+        <TextArea fx:id="summaryArea"
+                  layoutX="120.0"
+                  layoutY="470.0"
+                  prefWidth="680.0"
+                  prefHeight="60.0"
+                  editable="false" />
+
+    </children>
+
+</AnchorPane>
