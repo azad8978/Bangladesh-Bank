@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.CompareAnalyticalScenariosController"
+            prefHeight="600.0" prefWidth="900.0">
+
+    <children>
+
+        <!-- Title -->
+        <Label layoutX="300.0" layoutY="20.0" text="Compare Analytical Scenarios"
+               style="-fx-font-size:18px; -fx-font-weight:bold;" />
+
+        <!-- Scenario 1 -->
+        <Label layoutX="50.0" layoutY="80.0" text="Scenario 1 Dataset:" />
+        <ComboBox fx:id="dataset1ComboBox" layoutX="200.0" layoutY="75.0" prefWidth="200.0" />
+
+        <Label layoutX="50.0" layoutY="120.0" text="Start Date:" />
+        <DatePicker fx:id="startDate1" layoutX="200.0" layoutY="115.0" />
+
+        <Label layoutX="50.0" layoutY="160.0" text="End Date:" />
+        <DatePicker fx:id="endDate1" layoutX="200.0" layoutY="155.0" />
+
+        <!-- Scenario 2 -->
+        <Label layoutX="450.0" layoutY="80.0" text="Scenario 2 Dataset:" />
+        <ComboBox fx:id="dataset2ComboBox" layoutX="620.0" layoutY="75.0" prefWidth="200.0" />
+
+        <Label layoutX="450.0" layoutY="120.0" text="Start Date:" />
+        <DatePicker fx:id="startDate2" layoutX="620.0" layoutY="115.0" />
+
+        <Label layoutX="450.0" layoutY="160.0" text="End Date:" />
+        <DatePicker fx:id="endDate2" layoutX="620.0" layoutY="155.0" />
+
+        <!-- Compare Button -->
+        <Button fx:id="compareButton"
+                layoutX="380.0"
+                layoutY="210.0"
+                text="Compare"
+                prefWidth="150.0" />
+
+        <!-- Result Label -->
+        <Label layoutX="50.0" layoutY="260.0" text="Comparison Results:"
+               style="-fx-font-size:14px; -fx-font-weight:bold;" />
+
+        <!-- Chart -->
+        <BarChart fx:id="comparisonChart"
+                  layoutX="50.0"
+                  layoutY="290.0"
+                  prefHeight="200.0"
+                  prefWidth="500.0">
+
+            <xAxis>
+                <CategoryAxis label="Scenario" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Value" />
+            </yAxis>
+        </BarChart>
+
+        <!-- Table -->
+        <TableView fx:id="comparisonTable"
+                   layoutX="580.0"
+                   layoutY="290.0"
+                   prefHeight="200.0"
+                   prefWidth="300.0">
+
+            <columns>
+                <TableColumn text="Metric" prefWidth="150.0" />
+                <TableColumn text="Scenario 1" prefWidth="75.0" />
+                <TableColumn text="Scenario 2" prefWidth="75.0" />
+            </columns>
+        </TableView>
+
+        <!-- Summary Text -->
+        <Label layoutX="50.0" layoutY="510.0" text="Summary:" />
+        <TextArea fx:id="summaryArea"
+                  layoutX="120.0"
+                  layoutY="500.0"
+                  prefWidth="760.0"
+                  prefHeight="70.0" />
+
+    </children>
+
+</AnchorPane>

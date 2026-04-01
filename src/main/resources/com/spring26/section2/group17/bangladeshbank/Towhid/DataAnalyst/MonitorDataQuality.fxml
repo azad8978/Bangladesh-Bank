@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.MonitorDataQualityController"
+            prefHeight="550.0" prefWidth="850.0">
+
+    <children>
+
+        <!-- Title -->
+        <Label layoutX="280.0" layoutY="20.0"
+               text="Data Quality Check"
+               style="-fx-font-size:18px; -fx-font-weight:bold;" />
+
+        <!-- Step 1: Trigger Button -->
+        <Button fx:id="checkButton"
+                layoutX="350.0"
+                layoutY="70.0"
+                text="Run Data Quality Check"
+                prefWidth="180.0" />
+
+        <!-- Step 3: Report Table -->
+        <Label layoutX="50.0" layoutY="130.0"
+               text="Data Quality Report:"
+               style="-fx-font-weight:bold;" />
+
+        <TableView fx:id="qualityTable"
+                   layoutX="50.0"
+                   layoutY="160.0"
+                   prefWidth="750.0"
+                   prefHeight="180.0">
+
+            <columns>
+                <TableColumn text="Issue Type" prefWidth="200.0" />
+                <TableColumn text="Description" prefWidth="300.0" />
+                <TableColumn text="Count" prefWidth="100.0" />
+                <TableColumn text="Status" prefWidth="150.0" />
+            </columns>
+
+        </TableView>
+
+        <!-- Step 3: Detailed Output -->
+        <Label layoutX="50.0" layoutY="360.0"
+               text="Details:"
+               style="-fx-font-weight:bold;" />
+
+        <TextArea fx:id="detailsArea"
+                  layoutX="50.0"
+                  layoutY="390.0"
+                  prefWidth="750.0"
+                  prefHeight="80.0"
+                  editable="false" />
+
+        <!-- Step 4: Confirmation -->
+        <CheckBox fx:id="confirmCheckBox"
+                  layoutX="50.0"
+                  layoutY="490.0"
+                  text="I have reviewed and confirm corrections" />
+
+        <Button fx:id="confirmButton"
+                layoutX="350.0"
+                layoutY="485.0"
+                text="Confirm"
+                prefWidth="120.0" />
+
+    </children>
+
+</AnchorPane>

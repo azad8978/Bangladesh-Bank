@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.CyberSecurityOfficer.InitiateIncidentResponseController"
+            prefHeight="550.0" prefWidth="850.0">
+
+    <children>
+
+        <!-- Title -->
+        <Label layoutX="280.0" layoutY="20.0"
+               text="Initiate Incident Response"
+               style="-fx-font-size:18px; -fx-font-weight:bold;" />
+
+        <!-- Incident Type -->
+        <Label layoutX="50.0" layoutY="90.0" text="Incident Type:" />
+        <ComboBox fx:id="incidentTypeComboBox"
+                  layoutX="200.0"
+                  layoutY="85.0"
+                  prefWidth="250.0" />
+
+        <!-- Severity Level -->
+        <Label layoutX="50.0" layoutY="140.0" text="Severity Level:" />
+        <ComboBox fx:id="severityComboBox"
+                  layoutX="200.0"
+                  layoutY="135.0"
+                  prefWidth="250.0" />
+
+        <!-- Description -->
+        <Label layoutX="50.0" layoutY="190.0" text="Description:" />
+        <TextArea fx:id="descriptionArea"
+                  layoutX="200.0"
+                  layoutY="185.0"
+                  prefWidth="400.0"
+                  prefHeight="120.0" />
+
+        <!-- Initiate Button -->
+        <Button fx:id="initiateButton"
+                layoutX="300.0"
+                layoutY="330.0"
+                text="Initiate Response"
+                prefWidth="180.0" />
+
+        <!-- Status -->
+        <Label layoutX="50.0" layoutY="390.0"
+               text="System Status:"
+               style="-fx-font-weight:bold;" />
+
+        <TextArea fx:id="statusArea"
+                  layoutX="50.0"
+                  layoutY="420.0"
+                  prefWidth="750.0"
+                  prefHeight="100.0"
+                  editable="false" />
+
+    </children>
+
+</AnchorPane>
