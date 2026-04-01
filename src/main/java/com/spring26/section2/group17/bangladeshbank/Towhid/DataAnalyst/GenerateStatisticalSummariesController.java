@@ -1,5 +1,10 @@
 package com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst;
 
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
+
 public class GenerateStatisticalSummariesController
 {
     @javafx.fxml.FXML

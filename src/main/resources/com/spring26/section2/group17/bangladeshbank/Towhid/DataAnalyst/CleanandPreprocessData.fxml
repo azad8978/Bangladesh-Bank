@@ -1,83 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.collections.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.CleanandPreprocessDataController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.CleanandPreprocessDataController">
 
     <!-- Title -->
-    <Label layoutX="20.0" layoutY="10.0"
-           text="Clean &amp; Preprocess Data"
-           style="-fx-font-size:18px; -fx-font-weight:bold;" />
+    <Label layoutX="20.0" layoutY="10.0" style="-fx-font-size:18px; -fx-font-weight:bold;" text="Clean &amp; Preprocess Data" />
 
     <!-- Dataset Selection Table -->
     <Label layoutX="20.0" layoutY="40.0" text="Selected Dataset:" />
-    <TableView fx:id="datasetTable"
-               layoutX="20.0" layoutY="60.0"
-               prefHeight="120.0" prefWidth="560.0">
+    <TableView fx:id="datasetTable" layoutX="20.0" layoutY="60.0" prefHeight="120.0" prefWidth="560.0">
 
         <columns>
-            <TableColumn fx:id="nameColumn" text="Dataset Name" prefWidth="200"/>
-            <TableColumn fx:id="typeColumn" text="Type" prefWidth="180"/>
-            <TableColumn fx:id="timeColumn" text="Time Period" prefWidth="180"/>
+            <TableColumn fx:id="nameColumn" prefWidth="200" text="Dataset Name" />
+            <TableColumn fx:id="typeColumn" prefWidth="180" text="Type" />
+            <TableColumn fx:id="timeColumn" prefWidth="180" text="Time Period" />
         </columns>
     </TableView>
 
     <!-- Preprocess Button -->
-    <Button fx:id="preprocessButton"
-            layoutX="440.0" layoutY="190.0"
-            text="Preprocess Data"
-            prefWidth="140"/>
+    <Button fx:id="preprocessButton" layoutX="440.0" layoutY="190.0" prefWidth="140" text="Preprocess Data" />
 
     <!-- Preprocessing Options -->
-    <Label layoutX="20.0" layoutY="220.0"
-           text="Preprocessing Options:"
-           style="-fx-font-weight:bold;" />
+    <Label layoutX="20.0" layoutY="220.0" style="-fx-font-weight:bold;" text="Preprocessing Options:" />
 
     <VBox layoutX="20.0" layoutY="250.0" spacing="10">
-        <CheckBox fx:id="removeNullCheckBox" text="Remove Null Values"/>
-        <CheckBox fx:id="normalizeCheckBox" text="Normalize Data"/>
+        <CheckBox fx:id="removeNullCheckBox" text="Remove Null Values" />
+        <CheckBox fx:id="normalizeCheckBox" text="Normalize Data" />
     </VBox>
 
     <!-- Additional Options -->
     <Label layoutX="250.0" layoutY="220.0" text="Method:" />
 
-    <ComboBox fx:id="methodComboBox"
-              layoutX="250.0" layoutY="240.0">
+    <ComboBox fx:id="methodComboBox" layoutX="250.0" layoutY="240.0">
         <items>
             <FXCollections fx:factory="observableArrayList">
-                <String fx:value="Min-Max Normalization"/>
-                <String fx:value="Z-Score Normalization"/>
-                <String fx:value="Standard Scaling"/>
+                <String fx:value="Min-Max Normalization" />
+                <String fx:value="Z-Score Normalization" />
+                <String fx:value="Standard Scaling" />
             </FXCollections>
         </items>
     </ComboBox>
 
     <!-- Notes -->
     <Label layoutX="20.0" layoutY="300.0" text="Notes:" />
-    <TextArea fx:id="notesArea"
-              layoutX="20.0" layoutY="320.0"
-              prefWidth="560.0" prefHeight="40.0"
-              promptText="Optional preprocessing notes..." />
+    <TextArea fx:id="notesArea" layoutX="20.0" layoutY="320.0" prefHeight="40.0" prefWidth="560.0" promptText="Optional preprocessing notes..." />
 
     <!-- Output Area -->
     <Label layoutX="20.0" layoutY="365.0" text="Output:" />
-    <TextField fx:id="outputField"
-               layoutX="80.0" layoutY="360.0"
-               prefWidth="350.0"
-               promptText="Processed dataset status..." />
+    <TextField fx:id="outputField" layoutX="80.0" layoutY="360.0" prefWidth="350.0" promptText="Processed dataset status..." />
 
     <!-- Apply Button -->
-    <Button fx:id="applyButton"
-            layoutX="450.0" layoutY="355.0"
-            text="Apply"
-            prefWidth="100"/>
+    <Button fx:id="applyButton" layoutX="448.0" layoutY="361.0" prefWidth="100" text="Apply" />
 
 </AnchorPane>
