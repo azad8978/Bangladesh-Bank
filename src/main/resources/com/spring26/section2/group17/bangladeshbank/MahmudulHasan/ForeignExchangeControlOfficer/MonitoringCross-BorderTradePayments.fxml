@@ -10,5 +10,127 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.ForeignExchangeControlOfficer.MonitoringCrossBorderTradePaymentsController"
             prefHeight="400.0" prefWidth="600.0">
+    <children>
 
+        <!-- Header -->
+        <HBox layoutX="0" layoutY="0" prefWidth="600" prefHeight="50" style="-fx-background-color: #2E86C1;">
+            <children>
+                <Label text="Trade FX Monitoring System" textFill="WHITE"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold;"
+                       layoutX="20" layoutY="15"/>
+            </children>
+        </HBox>
+
+        <!-- Navigation Panel -->
+        <VBox layoutX="0" layoutY="50" prefWidth="150" prefHeight="350"
+              style="-fx-background-color: #D6EAF8;" spacing="10">
+            <children>
+                <Button text="Dashboard" prefWidth="140"/>
+                <Button text="Trade FX Monitoring" prefWidth="140"/>
+                <Button text="Reports" prefWidth="140"/>
+                <Button text="Logout" prefWidth="140"/>
+            </children>
+        </VBox>
+
+        <!-- Main Content Area -->
+        <TabPane layoutX="150" layoutY="50" prefWidth="450" prefHeight="350">
+
+            <tabs>
+
+                <!-- Event 1: Access Portal -->
+                <Tab text="Access Portal">
+                    <content>
+                        <VBox alignment="CENTER" spacing="15">
+                            <children>
+                                <Label text="Welcome to Trade FX Monitoring"/>
+                                <Button text="Enter Portal" fx:id="btnEnterPortal"/>
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+
+                <!-- Event 2: Input Trade Data -->
+                <Tab text="Input Data">
+                    <content>
+                        <GridPane hgap="10" vgap="10" alignment="CENTER">
+                            <children>
+
+                                <Label text="LC Number:" GridPane.rowIndex="0"/>
+                                <TextField fx:id="lcField" GridPane.columnIndex="1"/>
+
+                                <Label text="Invoice No:" GridPane.rowIndex="1"/>
+                                <TextField fx:id="invoiceField" GridPane.columnIndex="1"/>
+
+                                <Label text="Exporter:" GridPane.rowIndex="2"/>
+                                <TextField fx:id="exporterField" GridPane.columnIndex="1"/>
+
+                                <Label text="Importer:" GridPane.rowIndex="3"/>
+                                <TextField fx:id="importerField" GridPane.columnIndex="1"/>
+
+                                <Label text="Amount:" GridPane.rowIndex="4"/>
+                                <TextField fx:id="amountField" GridPane.columnIndex="1"/>
+
+                                <Button text="Submit" fx:id="btnSubmit"
+                                        GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                            </children>
+                        </GridPane>
+                    </content>
+                </Tab>
+
+                <!-- Event 3: Verify Documents -->
+                <Tab text="Verify Docs">
+                    <content>
+                        <VBox spacing="10" alignment="CENTER">
+                            <children>
+                                <Label text="Document Verification"/>
+
+                                <CheckBox fx:id="invoiceCheck" text="Invoice Authenticity"/>
+                                <CheckBox fx:id="shipmentCheck" text="Shipment Records"/>
+
+                                <Button text="Verify Documents" fx:id="btnVerify"/>
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+
+                <!-- Event 4: Clearance Status -->
+                <Tab text="Status">
+                    <content>
+                        <VBox alignment="CENTER" spacing="15">
+                            <children>
+                                <Label text="Clearance Status"/>
+                                <Label fx:id="statusLabel" text="Pending..."/>
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+
+                <!-- Event 5: Trade History -->
+                <Tab text="History">
+                    <content>
+                        <TableView fx:id="historyTable">
+                            <columns>
+                                <TableColumn text="LC No" fx:id="colLC"/>
+                                <TableColumn text="Invoice" fx:id="colInvoice"/>
+                                <TableColumn text="Exporter" fx:id="colExporter"/>
+                                <TableColumn text="Importer" fx:id="colImporter"/>
+                                <TableColumn text="Status" fx:id="colStatus"/>
+                            </columns>
+                        </TableView>
+                    </content>
+                </Tab>
+
+            </tabs>
+        </TabPane>
+
+        <!-- Status Bar -->
+        <HBox layoutX="0" layoutY="380" prefWidth="600" prefHeight="20"
+              style="-fx-background-color: #AED6F1;">
+            <children>
+                <Label fx:id="statusBar" text="System Ready" layoutX="10"/>
+            </children>
+        </HBox>
+
+    </children>
 </AnchorPane>
