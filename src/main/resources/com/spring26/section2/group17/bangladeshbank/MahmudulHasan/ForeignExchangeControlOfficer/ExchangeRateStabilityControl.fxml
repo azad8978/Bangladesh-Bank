@@ -10,4 +10,114 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.ForeignExchangeControlOfficer.ExchangeRateStabilityControlController"
             prefHeight="400.0" prefWidth="600.0">
+    <children>
+
+        <!-- HEADER -->
+        <Label layoutX="20" layoutY="10"
+               text="Exchange Rate Stability Control System"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <!-- EVENT 1: ACCESS MODULE -->
+        <TitledPane layoutX="20" layoutY="50" prefWidth="560" text="Access FX Rate Module">
+            <content>
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <children>
+                        <Label text="Open Exchange Rate Control Panel"/>
+                        <Button text="Open Module" fx:id="btnOpenModule"/>
+                    </children>
+                </HBox>
+            </content>
+        </TitledPane>
+
+        <!-- EVENT 2: INPUT FX DATA -->
+        <TitledPane layoutX="20" layoutY="120" prefWidth="560" text="Input Daily FX Rate Data">
+            <content>
+                <GridPane hgap="10" vgap="10">
+
+                    <Label text="Bank Name:" GridPane.rowIndex="0"/>
+                    <TextField fx:id="bankField" GridPane.columnIndex="1"/>
+
+                    <Label text="Currency:" GridPane.rowIndex="1"/>
+                    <ComboBox fx:id="currencyBox" GridPane.columnIndex="1"/>
+
+                    <Label text="Buying Rate:" GridPane.rowIndex="2"/>
+                    <TextField fx:id="buyRateField" GridPane.columnIndex="1"/>
+
+                    <Label text="Selling Rate:" GridPane.rowIndex="3"/>
+                    <TextField fx:id="sellRateField" GridPane.columnIndex="1"/>
+
+                    <Label text="Date:" GridPane.rowIndex="4"/>
+                    <DatePicker fx:id="datePicker" GridPane.columnIndex="1"/>
+
+                    <Button text="Submit FX Data"
+                            fx:id="btnSubmitFX"
+                            GridPane.rowIndex="5"
+                            GridPane.columnIndex="1"/>
+
+                </GridPane>
+            </content>
+        </TitledPane>
+
+        <!-- EVENT 3: PROCESS MARKET TRENDS -->
+        <TitledPane layoutX="20" layoutY="270" prefWidth="560" text="Process Market Trends">
+            <content>
+                <VBox spacing="10">
+
+                    <Button text="Analyze Market Trends" fx:id="btnAnalyze"/>
+
+                    <HBox spacing="20">
+                        <Label text="Volatility:"/>
+                        <Label fx:id="volatilityLabel" text="--"/>
+                    </HBox>
+
+                    <HBox spacing="20">
+                        <Label text="Deviation:"/>
+                        <Label fx:id="deviationLabel" text="--"/>
+                    </HBox>
+
+                </VBox>
+            </content>
+        </TitledPane>
+
+        <!-- EVENT 4: DISPLAY STABILITY REPORT -->
+        <TitledPane layoutX="20" layoutY="370" prefWidth="560" text="Stability Report Dashboard">
+            <content>
+                <VBox spacing="10">
+
+                    <Label text="Market Stability Status:"/>
+
+                    <Label fx:id="statusLabel"
+                           text="No Analysis Yet"
+                           style="-fx-font-size: 16px; -fx-text-fill: blue;"/>
+
+                    <ProgressBar fx:id="stabilityBar" progress="0.0"/>
+
+                </VBox>
+            </content>
+        </TitledPane>
+
+        <!-- EVENT 5: STORE ANALYTICS -->
+        <TitledPane layoutX="20" layoutY="470" prefWidth="560" text="Stored Market Analytics">
+            <content>
+                <TableView fx:id="historyTable" prefHeight="120">
+
+                    <columns>
+                        <TableColumn text="Bank" fx:id="colBank"/>
+                        <TableColumn text="Currency" fx:id="colCurrency"/>
+                        <TableColumn text="Buy" fx:id="colBuy"/>
+                        <TableColumn text="Sell" fx:id="colSell"/>
+                        <TableColumn text="Volatility" fx:id="colVolatility"/>
+                    </columns>
+
+                </TableView>
+            </content>
+        </TitledPane>
+
+        <!-- STATUS BAR -->
+        <Label layoutX="20" layoutY="610"
+               fx:id="statusBar"
+               text="System Ready"
+               style="-fx-text-fill: green;" />
+
+    </children>
 </AnchorPane>
