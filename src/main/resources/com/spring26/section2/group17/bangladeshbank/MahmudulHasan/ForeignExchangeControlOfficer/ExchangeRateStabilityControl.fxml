@@ -10,5 +10,4 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.ForeignExchangeControlOfficer.ExchangeRateStabilityControlController"
             prefHeight="400.0" prefWidth="600.0">
-
 </AnchorPane>
