@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.AnalyzeTrendsandPatternsController"
+            prefHeight="600.0" prefWidth="900.0">
+
+    <children>
+
+        <!-- Title -->
+        <Label layoutX="300.0" layoutY="20.0" text="Analyze Trends and Patterns"
+               style="-fx-font-size:18px; -fx-font-weight:bold;" />
+
+        <!-- Dataset Selection -->
+        <Label layoutX="50.0" layoutY="80.0" text="Select Dataset:" />
+        <ComboBox fx:id="datasetComboBox" layoutX="180.0" layoutY="75.0" prefWidth="200.0" />
+
+        <!-- Time Range -->
+        <Label layoutX="50.0" layoutY="130.0" text="Start Date:" />
+        <DatePicker fx:id="startDatePicker" layoutX="180.0" layoutY="125.0" />
+
+        <Label layoutX="50.0" layoutY="180.0" text="End Date:" />
+        <DatePicker fx:id="endDatePicker" layoutX="180.0" layoutY="175.0" />
+
+        <!-- Trend Analysis Button -->
+        <Button fx:id="analyzeButton"
+                layoutX="180.0"
+                layoutY="230.0"
+                text="Trend Analysis"
+                prefWidth="150.0" />
+
+        <!-- Output Label -->
+        <Label layoutX="50.0" layoutY="290.0" text="Trend Results:"
+               style="-fx-font-size:14px; -fx-font-weight:bold;" />
+
+        <!-- Line Chart for Graphical Output -->
+        <LineChart fx:id="trendChart"
+                   layoutX="50.0"
+                   layoutY="320.0"
+                   prefHeight="200.0"
+                   prefWidth="500.0">
+
+            <xAxis>
+                <CategoryAxis label="Time" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Value" />
+            </yAxis>
+        </LineChart>
+
+        <!-- Table for Data Output -->
+        <TableView fx:id="trendTable"
+                   layoutX="580.0"
+                   layoutY="320.0"
+                   prefHeight="200.0"
+                   prefWidth="280.0">
+
+            <columns>
+                <TableColumn text="Date" prefWidth="130.0" />
+                <TableColumn text="Value" prefWidth="150.0" />
+            </columns>
+        </TableView>
+
+    </children>
+
+</AnchorPane>

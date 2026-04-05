@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.ExportAnalyticalOutputsController"
+            prefHeight="500.0" prefWidth="800.0">
+
+    <!-- NON-VISUAL COMPONENTS -->
+    <fx:define>
+        <ToggleGroup fx:id="formatGroup"/>
+    </fx:define>
+
+    <children>
+
+        <!-- Title -->
+        <Label layoutX="250.0" layoutY="20.0"
+               text="Export Analytical Outputs"
+               style="-fx-font-size:18px; -fx-font-weight:bold;" />
+
+        <!-- Select Result -->
+        <Label layoutX="50.0" layoutY="90.0" text="Select Result:" />
+        <ComboBox fx:id="resultComboBox"
+                  layoutX="200.0"
+                  layoutY="85.0"
+                  prefWidth="250.0" />
+
+        <!-- Export Format -->
+        <Label layoutX="50.0" layoutY="150.0" text="Select Export Format:" />
+
+        <RadioButton fx:id="csvRadio"
+                     layoutX="220.0"
+                     layoutY="150.0"
+                     text="CSV"
+                     toggleGroup="$formatGroup" />
+
+        <RadioButton fx:id="pdfRadio"
+                     layoutX="300.0"
+                     layoutY="150.0"
+                     text="PDF"
+                     toggleGroup="$formatGroup" />
+
+        <!-- Export Button -->
+        <Button fx:id="exportButton"
+                layoutX="250.0"
+                layoutY="210.0"
+                text="Export"
+                prefWidth="120.0" />
+
+        <!-- Status Label -->
+        <Label layoutX="50.0" layoutY="270.0"
+               text="Export Status:"
+               style="-fx-font-size:14px; -fx-font-weight:bold;" />
+
+        <!-- Status Output -->
+        <TextArea fx:id="statusArea"
+                  layoutX="50.0"
+                  layoutY="300.0"
+                  prefWidth="700.0"
+                  prefHeight="150.0"
+                  editable="false" />
+
+    </children>
+
+</AnchorPane>

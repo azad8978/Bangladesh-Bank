@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.CyberSecurityOfficer.ReviewSystemLogsController"
+            prefHeight="550.0" prefWidth="850.0">
+
+    <children>
+
+        <!-- Title -->
+        <Label layoutX="300.0" layoutY="20.0"
+               text="System Logs Review"
+               style="-fx-font-size:18px; -fx-font-weight:bold;" />
+
+        <!-- Filter Section -->
+        <Label layoutX="50.0" layoutY="80.0" text="Log Type:" />
+        <ComboBox fx:id="logTypeComboBox"
+                  layoutX="130.0"
+                  layoutY="75.0"
+                  prefWidth="150.0" />
+
+        <Label layoutX="300.0" layoutY="80.0" text="Source:" />
+        <TextField fx:id="sourceField"
+                   layoutX="360.0"
+                   layoutY="75.0"
+                   prefWidth="150.0" />
+
+        <Label layoutX="530.0" layoutY="80.0" text="Date:" />
+        <DatePicker fx:id="datePicker"
+                    layoutX="580.0"
+                    layoutY="75.0" />
+
+        <!-- Filter Button -->
+        <Button fx:id="filterButton"
+                layoutX="720.0"
+                layoutY="75.0"
+                text="Apply Filter" />
+
+        <!-- Table -->
+        <Label layoutX="50.0" layoutY="130.0"
+               text="System Logs:"
+               style="-fx-font-weight:bold;" />
+
+        <TableView fx:id="logTable"
+                   layoutX="50.0"
+                   layoutY="160.0"
+                   prefWidth="750.0"
+                   prefHeight="300.0">
+
+            <columns>
+                <TableColumn text="Log ID" prefWidth="100.0" />
+                <TableColumn text="Source" prefWidth="150.0" />
+                <TableColumn text="Action" prefWidth="250.0" />
+                <TableColumn text="Timestamp" prefWidth="250.0" />
+            </columns>
+
+        </TableView>
+
+        <!-- Status -->
+        <Label layoutX="50.0" layoutY="480.0"
+               text="Status:"
+               style="-fx-font-weight:bold;" />
+
+        <TextArea fx:id="statusArea"
+                  layoutX="110.0"
+                  layoutY="470.0"
+                  prefWidth="690.0"
+                  prefHeight="60.0"
+                  editable="false" />
+
+    </children>
+
+</AnchorPane>
