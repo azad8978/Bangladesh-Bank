@@ -1,14 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.ForeignExchangeControlOfficer.FXDataIntelligenceReportingController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="542.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.ForeignExchangeControlOfficer.FXDataIntelligenceReportingController">
+    <children>
 
+        <!-- HEADER -->
+        <Label layoutX="211.0" layoutY="15.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="FX Intelligence Command Center" />
+
+        <!-- TOP RIBBON (Event 1 + 2) -->
+        <HBox layoutX="18.0" layoutY="53.0" prefHeight="52.0" prefWidth="662.0" spacing="10" style="-fx-border-color: #BDC3C7; -fx-padding: 10;">
+
+            <children>
+                <!-- Event 1 -->
+                <Button fx:id="btnLaunch" text="Launch Dashboard" />
+
+                <!-- Event 2 -->
+                <ComboBox fx:id="datasetBox" promptText="Dataset Type" />
+                <DatePicker fx:id="startDate" />
+                <DatePicker fx:id="endDate" />
+
+                <Button fx:id="btnRun" prefHeight="21.0" prefWidth="123.0" text="Run Analysis" />
+            </children>
+        </HBox>
+
+        <!-- CENTER SECTION -->
+        <HBox layoutX="20" layoutY="110" spacing="15">
+
+            <!-- LEFT: INSIGHT CARDS (Event 3) -->
+            <VBox prefWidth="180" spacing="15">
+
+                <VBox prefHeight="0.0" prefWidth="181.0" style="-fx-background-color: #EBF5FB; -fx-padding: 10;">
+                    <Label text="Avg FX Rate" />
+                    <Label fx:id="avgRateLabel" style="-fx-font-size: 16px;" text="--" />
+                </VBox>
+
+                <VBox style="-fx-background-color: #FEF9E7; -fx-padding: 10;">
+                    <Label text="Risk Level" />
+                    <Label fx:id="riskLabel" style="-fx-font-size: 16px;" text="--" />
+                </VBox>
+
+                <VBox style="-fx-background-color: #E8F8F5; -fx-padding: 10;">
+                    <Label text="Trend" />
+                    <Label fx:id="trendLabel" style="-fx-font-size: 16px;" text="--" />
+                </VBox>
+
+            </VBox>
+
+            <!-- RIGHT: REPORT VIEWER (Event 4) -->
+            <VBox prefHeight="201.0" prefWidth="465.0" spacing="10" style="-fx-border-color: #BDC3C7; -fx-padding: 10;">
+
+                <Label style="-fx-font-weight: bold;" text="Analytical Report" />
+
+                <TextArea fx:id="reportArea" prefHeight="150" prefWidth="373.0" promptText="Generated report will appear here..." />
+
+            </VBox>
+
+        </HBox>
+
+        <!-- BOTTOM: ARCHIVE TABLE (Event 5) -->
+        <TableView fx:id="archiveTable" layoutX="9.0" layoutY="323.0" prefHeight="180" prefWidth="672.0">
+
+            <columns>
+                <TableColumn fx:id="colDataset" text="Dataset" />
+                <TableColumn fx:id="colPeriod" text="Period" />
+                <TableColumn fx:id="colAvg" text="Avg Rate" />
+                <TableColumn fx:id="colRisk" text="Risk" />
+            </columns>
+
+        </TableView>
+
+        <!-- STATUS BAR -->
+        <Label fx:id="statusBar" layoutX="19.0" layoutY="510.0" style="-fx-text-fill: green;" text="System Ready" />
+
+    </children>
 </AnchorPane>

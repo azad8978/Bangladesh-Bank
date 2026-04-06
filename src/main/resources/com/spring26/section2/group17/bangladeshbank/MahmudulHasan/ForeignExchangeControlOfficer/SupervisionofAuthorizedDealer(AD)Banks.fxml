@@ -10,5 +10,86 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.ForeignExchangeControlOfficer.SupervisionofAuthorizedDealerADBanksController"
             prefHeight="400.0" prefWidth="600.0">
+    <children>
+
+        <!-- HEADER -->
+        <Label layoutX="20" layoutY="10"
+               text="Authorized Dealer (AD) Bank Supervision System"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <!-- EVENT 1: ACCESS PORTAL -->
+        <HBox layoutX="20" layoutY="50" spacing="15">
+            <children>
+                <Label text="Access AD Bank Control Module:"/>
+                <Button text="Open Portal" fx:id="btnOpenPortal"/>
+            </children>
+        </HBox>
+
+        <!-- LEFT SIDE: INPUT SECTION (EVENT 2) -->
+        <VBox layoutX="20" layoutY="100" prefWidth="260" prefHeight="220"
+              spacing="10"
+              style="-fx-border-color: #BDC3C7; -fx-padding: 10;">
+
+            <children>
+                <Label text="Bank FX Data Entry"
+                       style="-fx-font-weight: bold;"/>
+
+                <TextField fx:id="bankNameField" promptText="Bank Name"/>
+                <TextField fx:id="licenseField" promptText="License Number"/>
+                <TextField fx:id="transactionVolumeField" promptText="Transaction Volume"/>
+                <TextField fx:id="reportField" promptText="Report Summary"/>
+
+                <Button text="Submit Data" fx:id="btnSubmit"/>
+            </children>
+
+        </VBox>
+
+        <!-- RIGHT SIDE: VERIFICATION + RESULT -->
+        <VBox layoutX="320" layoutY="100" prefWidth="260" prefHeight="220"
+              spacing="15"
+              style="-fx-border-color: #BDC3C7; -fx-padding: 10;">
+
+            <children>
+
+                <!-- EVENT 3 -->
+                <Label text="License Compliance Check"
+                       style="-fx-font-weight: bold;"/>
+
+                <Button text="Verify Compliance" fx:id="btnVerify"/>
+
+                <CheckBox fx:id="licenseCheck" text="Valid License"/>
+                <CheckBox fx:id="regulationCheck" text="Regulatory Compliance"/>
+
+                <!-- EVENT 4 -->
+                <Label text="Compliance Status:"/>
+
+                <Label fx:id="statusLabel"
+                       text="Pending"
+                       style="-fx-font-size: 14px;"/>
+
+            </children>
+
+        </VBox>
+
+        <!-- EVENT 5: TABLE (BOTTOM) -->
+        <TableView layoutX="20" layoutY="340" prefWidth="560" prefHeight="180"
+                   fx:id="reportTable">
+
+            <columns>
+                <TableColumn text="Bank Name" fx:id="colBank"/>
+                <TableColumn text="License" fx:id="colLicense"/>
+                <TableColumn text="Volume" fx:id="colVolume"/>
+                <TableColumn text="Status" fx:id="colStatus"/>
+            </columns>
+
+        </TableView>
+
+        <!-- STATUS BAR -->
+        <Label layoutX="20" layoutY="530"
+               fx:id="statusBar"
+               text="System Ready"
+               style="-fx-text-fill: green;" />
+
+    </children>
 
 </AnchorPane>
