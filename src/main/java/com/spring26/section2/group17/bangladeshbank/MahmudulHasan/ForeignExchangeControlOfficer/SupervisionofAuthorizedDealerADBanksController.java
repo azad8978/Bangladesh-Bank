@@ -31,8 +31,6 @@ public class SupervisionofAuthorizedDealerADBanksController
     @javafx.fxml.FXML
     private TableColumn colLicense;
     @javafx.fxml.FXML
-    private Label statusBar;
-    @javafx.fxml.FXML
     private Button btnSubmit;
     @javafx.fxml.FXML
     private TableColumn colStatus;

@@ -25,8 +25,6 @@ public class RegulationofForeignCurrencyTransactionsController
     @javafx.fxml.FXML
     private TextField purposeField;
     @javafx.fxml.FXML
-    private Label statusLabel;
-    @javafx.fxml.FXML
     private TextField amountField;
     @javafx.fxml.FXML
     private TableColumn colStatus;

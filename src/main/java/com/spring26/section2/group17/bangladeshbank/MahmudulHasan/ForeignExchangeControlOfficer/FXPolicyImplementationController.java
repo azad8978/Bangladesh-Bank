@@ -23,8 +23,6 @@ public class FXPolicyImplementationController
     @javafx.fxml.FXML
     private TextArea policyTextArea;
     @javafx.fxml.FXML
-    private Label statusBar;
-    @javafx.fxml.FXML
     private TableColumn colId;
     @javafx.fxml.FXML
     private TableColumn colTitle;

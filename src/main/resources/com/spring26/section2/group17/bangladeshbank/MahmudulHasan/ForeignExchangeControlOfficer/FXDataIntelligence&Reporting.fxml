@@ -15,10 +15,10 @@
     <children>
 
         <!-- HEADER -->
-        <Label layoutX="211.0" layoutY="15.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="FX Intelligence Command Center" />
+        <Label layoutX="208.0" layoutY="15.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="FX Intelligence Command Center" />
 
         <!-- TOP RIBBON (Event 1 + 2) -->
-        <HBox layoutX="18.0" layoutY="53.0" prefHeight="52.0" prefWidth="662.0" spacing="10" style="-fx-border-color: #BDC3C7; -fx-padding: 10;">
+        <HBox layoutX="9.0" layoutY="53.0" prefHeight="52.0" prefWidth="671.0" spacing="10" style="-fx-border-color: #BDC3C7; -fx-padding: 10;">
 
             <children>
                 <!-- Event 1 -->
@@ -34,17 +34,17 @@
         </HBox>
 
         <!-- CENTER SECTION -->
-        <HBox layoutX="20" layoutY="110" spacing="15">
+        <HBox layoutX="10.0" layoutY="114.0" prefHeight="201.0" prefWidth="673.0" spacing="15">
 
             <!-- LEFT: INSIGHT CARDS (Event 3) -->
             <VBox prefWidth="180" spacing="15">
 
-                <VBox prefHeight="0.0" prefWidth="181.0" style="-fx-background-color: #EBF5FB; -fx-padding: 10;">
+                <VBox prefHeight="57.0" prefWidth="151.0" style="-fx-background-color: #EBF5FB; -fx-padding: 10;">
                     <Label text="Avg FX Rate" />
                     <Label fx:id="avgRateLabel" style="-fx-font-size: 16px;" text="--" />
                 </VBox>
 
-                <VBox style="-fx-background-color: #FEF9E7; -fx-padding: 10;">
+                <VBox prefHeight="57.0" prefWidth="191.0" style="-fx-background-color: #FEF9E7; -fx-padding: 10;">
                     <Label text="Risk Level" />
                     <Label fx:id="riskLabel" style="-fx-font-size: 16px;" text="--" />
                 </VBox>
@@ -57,7 +57,7 @@
             </VBox>
 
             <!-- RIGHT: REPORT VIEWER (Event 4) -->
-            <VBox prefHeight="201.0" prefWidth="465.0" spacing="10" style="-fx-border-color: #BDC3C7; -fx-padding: 10;">
+            <VBox prefHeight="201.0" prefWidth="474.0" spacing="10" style="-fx-border-color: #BDC3C7; -fx-padding: 10;">
 
                 <Label style="-fx-font-weight: bold;" text="Analytical Report" />
 
@@ -68,7 +68,7 @@
         </HBox>
 
         <!-- BOTTOM: ARCHIVE TABLE (Event 5) -->
-        <TableView fx:id="archiveTable" layoutX="9.0" layoutY="323.0" prefHeight="180" prefWidth="672.0">
+        <TableView fx:id="archiveTable" layoutX="9.0" layoutY="323.0" prefHeight="216.0" prefWidth="672.0">
 
             <columns>
                 <TableColumn fx:id="colDataset" text="Dataset" />
@@ -78,9 +78,6 @@
             </columns>
 
         </TableView>
-
-        <!-- STATUS BAR -->
-        <Label fx:id="statusBar" layoutX="19.0" layoutY="510.0" style="-fx-text-fill: green;" text="System Ready" />
 
     </children>
 </AnchorPane>

@@ -29,8 +29,6 @@ public class FXDataIntelligenceReportingController
     @javafx.fxml.FXML
     private ComboBox datasetBox;
     @javafx.fxml.FXML
-    private Label statusBar;
-    @javafx.fxml.FXML
     private DatePicker startDate;
     @javafx.fxml.FXML
     private Button btnRun;

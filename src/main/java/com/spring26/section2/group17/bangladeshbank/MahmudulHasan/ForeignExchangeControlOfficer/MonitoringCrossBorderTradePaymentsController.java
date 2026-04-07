@@ -27,8 +27,6 @@ public class MonitoringCrossBorderTradePaymentsController
     @javafx.fxml.FXML
     private TextField importerField;
     @javafx.fxml.FXML
-    private Label statusBar;
-    @javafx.fxml.FXML
     private TextField invoiceField;
     @javafx.fxml.FXML
     private Button btnSubmit;

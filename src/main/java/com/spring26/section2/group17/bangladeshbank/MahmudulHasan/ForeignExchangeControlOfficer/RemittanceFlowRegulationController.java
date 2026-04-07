@@ -27,8 +27,6 @@ public class RemittanceFlowRegulationController
     @javafx.fxml.FXML
     private TextField receiverField;
     @javafx.fxml.FXML
-    private Label systemStatus;
-    @javafx.fxml.FXML
     private Button btnVerify;
     @javafx.fxml.FXML
     private TextField senderField;

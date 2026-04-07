@@ -27,8 +27,6 @@ public class ExchangeRateStabilityControlController
     @javafx.fxml.FXML
     private ComboBox currencyBox;
     @javafx.fxml.FXML
-    private Label statusLabel;
-    @javafx.fxml.FXML
     private ProgressBar stabilityBar;
     @javafx.fxml.FXML
     private TableView historyTable;
@@ -38,8 +36,6 @@ public class ExchangeRateStabilityControlController
     private TableColumn colBank;
     @javafx.fxml.FXML
     private TableColumn colBuy;
-    @javafx.fxml.FXML
-    private Label statusBar;
     @javafx.fxml.FXML
     private TableColumn colSell;
     @javafx.fxml.FXML
