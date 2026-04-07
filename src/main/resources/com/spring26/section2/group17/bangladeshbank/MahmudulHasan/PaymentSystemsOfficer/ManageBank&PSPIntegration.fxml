@@ -1,14 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.PaymentSystemsOfficer.ManageBankPSPIntegrationController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="735.0" prefWidth="1291.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.PaymentSystemsOfficer.ManageBankPSPIntegrationController">
+    <!-- Top Header -->
+    <HBox spacing="10" style="-fx-background-color: #0D3B66;" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <padding>
+            <Insets bottom="10" left="10" right="10" top="10" />
+        </padding>
+        <Label prefHeight="26.0" prefWidth="644.0" style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: bold;" text="                                                                   🏦 Banking PSP Operations Portal" />
+        <Pane HBox.hgrow="ALWAYS" />
+        <TextField fx:id="searchField" prefWidth="300" promptText="Search Transactions / PSP / Bank" />
+        <Button style="-fx-font-size: 14;" text="Notifications" />
+        <MenuButton style="-fx-font-size: 14;" text="User Name">
+            <items>
+                <MenuItem text="Profile" />
+                <MenuItem text="Settings" />
+                <MenuItem text="Logout" />
+            </items>
+        </MenuButton>
+    </HBox>
+
+    <!-- Sidebar -->
+    <VBox fx:id="sidebar" spacing="10" style="-fx-background-color: #F7F7F7;" AnchorPane.bottomAnchor="30" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="60">
+        <padding>
+            <Insets bottom="10" left="10" right="10" top="10" />
+        </padding>
+        <Button maxWidth="200" text="Dashboard" />
+        <Button maxWidth="200" text="Transactions" />
+        <Button maxWidth="200" text="Bank Integrations" />
+        <Button maxWidth="200" text="PSP Integrations" />
+        <Button maxWidth="200" text="Risk and Fraud Monitoring" />
+        <Button maxWidth="200" text="Reports and Analytics" />
+        <Button maxWidth="200" text="Settings" />
+    </VBox>
+
+    <!-- Main Content Area -->
+    <SplitPane dividerPositions="0.5" AnchorPane.bottomAnchor="30" AnchorPane.leftAnchor="210" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="60">
+        <items>
+
+            <!-- Left Pane: Workflow Cards -->
+            <ScrollPane fitToWidth="true">
+                <VBox spacing="15">
+                    <padding>
+                        <Insets bottom="15" left="15" right="15" top="15" />
+                    </padding>
+
+                    <!-- Module Selection -->
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label text="Select Module:" />
+                        <ComboBox fx:id="moduleComboBox" prefWidth="200" />
+                    </HBox>
+
+                    <!-- Transaction Input -->
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Transaction ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="transactionField" promptText="Enter Transaction ID" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label text="Bank:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="bankField" promptText="Enter Bank Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="PSP:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="pspField" promptText="Enter PSP Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Amount:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="amountField" promptText="Enter Amount" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <columnConstraints>
+                            <ColumnConstraints />
+                            <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                        </rowConstraints>
+                    </GridPane>
+
+                    <!-- Validate Transaction -->
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Button fx:id="validateBtn" text="Validate Input" />
+                        <Label fx:id="validationStatus" text="Status: Pending" />
+                    </HBox>
+
+                    <!-- Verify Transaction -->
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Button fx:id="verifyBtn" text="Verify Transaction" />
+                        <Label fx:id="verifyStatus" text="Verification: Pending" />
+                    </HBox>
+
+                    <!-- Process Transaction -->
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Button fx:id="processBtn" text="Process Transaction" />
+                        <ProgressBar fx:id="processProgress" prefWidth="150" progress="0" />
+                    </HBox>
+
+                    <!-- Transaction Output -->
+                    <Label text="Transaction Output" />
+                    <TableView fx:id="outputTable" prefHeight="200">
+                        <columns>
+                            <TableColumn prefWidth="120" text="Transaction ID" />
+                            <TableColumn prefWidth="120" text="Bank" />
+                            <TableColumn prefWidth="120" text="PSP" />
+                            <TableColumn prefWidth="100" text="Amount" />
+                            <TableColumn prefWidth="100" text="Status" />
+                            <TableColumn prefWidth="100" text="Risk Score" />
+                            <TableColumn prefWidth="120" text="Date" />
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10">
+                        <Button text="Export CSV" />
+                        <Button text="Export PDF" />
+                    </HBox>
+
+                </VBox>
+            </ScrollPane>
+
+            <!-- Right Pane: Analytics / Monitoring -->
+            <VBox spacing="15">
+                <padding>
+                    <Insets bottom="15" left="15" right="15" top="15" />
+                </padding>
+                <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Analytics and Monitoring" />
+                <HBox spacing="10">
+                    <VBox prefWidth="250" spacing="10" style="-fx-background-color:#E6F0FA;">
+                        <padding>
+                            <Insets bottom="10" left="10" right="10" top="10" />
+                        </padding>
+                        <Label text="Total Transactions" />
+                        <Label text="Processed: 0" />
+                        <Label text="Failed: 0" />
+                    </VBox>
+                    <VBox prefWidth="250" spacing="10" style="-fx-background-color:#E6F0FA;">
+                        <padding>
+                            <Insets bottom="10" left="10" right="10" top="10" />
+                        </padding>
+                        <Label text="Alerts / Notifications" />
+                        <ListView fx:id="alertsList" prefHeight="150" />
+                    </VBox>
+                </HBox>
+                <Label style="-fx-font-style: italic;" text="Charts (Placeholder)" />
+                <Pane fx:id="chartsPane" prefHeight="200" style="-fx-background-color:#F7F7F7; -fx-border-color:#CCCCCC;" />
+            </VBox>
+
+        </items>
+    </SplitPane>
 
 </AnchorPane>

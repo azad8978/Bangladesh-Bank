@@ -1,14 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.PaymentSystemsOfficer.HandleDisputeResolutionController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="598.0" prefWidth="1000" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.PaymentSystemsOfficer.HandleDisputeResolutionController">
 
+    <!-- HEADER -->
+    <HBox layoutX="0" layoutY="0" prefHeight="60" prefWidth="1000" style="-fx-background-color:#2C3E50; -fx-padding:15;">
+        <Label prefHeight="26.0" prefWidth="870.0" style="-fx-font-size:20px; -fx-font-weight:bold; -fx-text-fill:white;" text="                                                                                              🏦 Handle Dispute Resolution" />
+        <Pane HBox.hgrow="ALWAYS" />
+        <Label style="-fx-text-fill:white;" text="User: Officer" />
+    </HBox>
+
+    <!-- KPI PANEL -->
+    <HBox layoutX="10" layoutY="70" prefHeight="100" prefWidth="980" spacing="20">
+        <VBox style="-fx-background-color:#E3F2FD; -fx-padding:15; -fx-border-radius:10; -fx-background-radius:10;">
+            <Label style="-fx-font-weight:bold;" text="Total Disputes" />
+            <Label fx:id="lblTotalDisputes" text="0" />
+        </VBox>
+        <VBox style="-fx-background-color:#FFF3E0; -fx-padding:15; -fx-border-radius:10; -fx-background-radius:10;">
+            <Label style="-fx-font-weight:bold;" text="Pending" />
+            <Label fx:id="lblPending" text="0" />
+        </VBox>
+        <VBox style="-fx-background-color:#E8F5E9; -fx-padding:15; -fx-border-radius:10; -fx-background-radius:10;">
+            <Label style="-fx-font-weight:bold;" text="Resolved" />
+            <Label fx:id="lblResolved" text="0" />
+        </VBox>
+        <VBox style="-fx-background-color:#FFEBEE; -fx-padding:15; -fx-border-radius:10; -fx-background-radius:10;">
+            <Label style="-fx-font-weight:bold;" text="Errors" />
+            <Label fx:id="lblErrors" text="0" />
+        </VBox>
+    </HBox>
+
+    <!-- WORKFLOW CARDS -->
+    <GridPane hgap="15" layoutX="10" layoutY="190" prefHeight="300" prefWidth="980" vgap="15">
+
+        <!-- Event 1 -->
+        <VBox spacing="10" style="-fx-background-color:#F0F8FF; -fx-padding:15; -fx-border-radius:10; -fx-background-radius:10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1),5,0,0,2);" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label style="-fx-font-weight:bold;" text="Event 1: Access Module (UIE)" />
+            <Button onAction="#handleAccessModule" style="-fx-background-color:#64B5F6; -fx-text-fill:white;" text="Open Dashboard" />
+        </VBox>
+
+        <!-- Event 2 -->
+        <VBox spacing="10" style="-fx-background-color:#F0FFF0; -fx-padding:15; -fx-border-radius:10; -fx-background-radius:10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1),5,0,0,2);" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label style="-fx-font-weight:bold;" text="Event 2: Enter Data (UID)" />
+            <TextField fx:id="txtTransactionId" promptText="Transaction ID" />
+            <DatePicker fx:id="startDate" />
+            <DatePicker fx:id="endDate" />
+            <ComboBox fx:id="cmbDisputeType" promptText="Dispute Type" />
+            <Button onAction="#handleLoadData" style="-fx-background-color:#64B5F6; -fx-text-fill:white;" text="Load Data" />
+        </VBox>
+
+        <!-- Event 3 -->
+        <VBox spacing="10" style="-fx-background-color:#FFF0F5; -fx-padding:15; -fx-border-radius:10; -fx-background-radius:10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1),5,0,0,2);" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <Label style="-fx-font-weight:bold;" text="Event 3: Validate Input (VL)" />
+            <Button onAction="#handleValidate" style="-fx-background-color:#FFD54F;" text="Validate Input" />
+            <Label fx:id="lblStatusValidation" style="-fx-text-fill:#5C6B73; -fx-font-style:italic;" text="Status: Waiting..." />
+        </VBox>
+
+        <!-- Event 4 -->
+        <VBox spacing="10" style="-fx-background-color:#FFF8DC; -fx-padding:15; -fx-border-radius:10; -fx-background-radius:10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1),5,0,0,2);" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <Label style="-fx-font-weight:bold;" text="Event 4: Verify Transaction (VR)" />
+            <Button onAction="#handleVerify" style="-fx-background-color:#81C784; -fx-text-fill:white;" text="Verify Transaction" />
+            <Label fx:id="lblStatusVerify" style="-fx-text-fill:#5C6B73; -fx-font-style:italic;" text="Status: Waiting..." />
+        </VBox>
+
+        <!-- Event 5 -->
+        <VBox spacing="10" style="-fx-background-color:#E0FFFF; -fx-padding:15; -fx-border-radius:10; -fx-background-radius:10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1),5,0,0,2);" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label style="-fx-font-weight:bold;" text="Event 5: Process Data (DP)" />
+            <Button onAction="#handleProcess" style="-fx-background-color:#E57373; -fx-text-fill:white;" text="Process Dispute" />
+            <Label fx:id="lblStatusProcess" style="-fx-text-fill:#5C6B73; -fx-font-style:italic;" text="Status: Waiting..." />
+        </VBox>
+
+        <!-- Event 6 -->
+        <VBox spacing="10" style="-fx-background-color:#FFFACD; -fx-padding:15; -fx-border-radius:10; -fx-background-radius:10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1),5,0,0,2);" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Label style="-fx-font-weight:bold;" text="Event 6: Display Output (OP)" />
+            <TableView fx:id="disputeTable" prefHeight="150">
+                <columns>
+                    <TableColumn prefWidth="150" text="Transaction ID" />
+                    <TableColumn prefWidth="150" text="Dispute Type" />
+                    <TableColumn prefWidth="120" text="Status" />
+                    <TableColumn prefWidth="150" text="Remarks" />
+                </columns>
+            </TableView>
+            <Label fx:id="lblOutput" style="-fx-text-fill:#34495E;" text="No results yet" />
+        </VBox>
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+
+    </GridPane>
 </AnchorPane>
