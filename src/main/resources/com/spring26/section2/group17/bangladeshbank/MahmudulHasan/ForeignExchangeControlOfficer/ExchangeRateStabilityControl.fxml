@@ -16,11 +16,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.ForeignExchangeControlOfficer.ExchangeRateStabilityControlController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.ForeignExchangeControlOfficer.ExchangeRateStabilityControlController">
     <children>
 
         <!-- HEADER -->
-        <Label layoutX="135.0" layoutY="4.0" prefHeight="26.0" prefWidth="337.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Exchange Rate Stability Control System" />
+        <Label layoutX="109.0" layoutY="-1.0" prefHeight="30.0" prefWidth="381.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Exchange Rate Stability Control System" />
 
         <!-- EVENT 1: ACCESS MODULE -->
         <TitledPane layoutX="20.0" layoutY="30.0" prefWidth="560" text="Access FX Rate Module">

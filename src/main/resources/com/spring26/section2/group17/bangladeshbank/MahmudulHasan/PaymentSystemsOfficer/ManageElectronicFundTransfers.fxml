@@ -15,11 +15,11 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="540.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.PaymentSystemsOfficer.ManageElectronicFundTransfersController">
+<AnchorPane prefHeight="540.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.PaymentSystemsOfficer.ManageElectronicFundTransfersController">
     <!-- HEADER -->
     <HBox prefHeight="50" spacing="20" style="-fx-background-color: #2C3E50;" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
         <children>
-            <Label prefHeight="23.0" prefWidth="519.0" style="-fx-text-fill: white; -fx-font-size: 18px;" text="                                                       💸 Manage Electronic Fund Transfers" />
+            <Label prefHeight="27.0" prefWidth="522.0" style="-fx-text-fill: white; -fx-font-size: 18px;" text="                                        💸 Manage Electronic Fund Transfers" />
             <Region HBox.hgrow="ALWAYS" />
             <Button text="Help" />
             <Button text="Logout" />
