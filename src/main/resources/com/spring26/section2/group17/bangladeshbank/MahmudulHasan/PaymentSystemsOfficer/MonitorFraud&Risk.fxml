@@ -13,10 +13,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.PaymentSystemsOfficer.MonitorFraudRiskController">
+<AnchorPane prefHeight="488.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.PaymentSystemsOfficer.MonitorFraudRiskController">
     <!-- Header -->
     <HBox spacing="10" style="-fx-background-color: #2E8B57; -fx-padding: 10;" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
-        <Label prefHeight="26.0" prefWidth="502.0" style="-fx-text-fill: white;" text="                           ⚠️ Banking Fraud  Risk Monitoring System">
+        <Label prefHeight="30.0" prefWidth="625.0" style="-fx-text-fill: white;" text="                             ⚠ Banking Fraud Risk Monitoring System">
             <font>
                 <Font size="20" />
             </font>
@@ -26,7 +26,7 @@
     </HBox>
 
     <!-- Sidebar -->
-    <VBox prefWidth="200" spacing="15" style="-fx-background-color: #f0f0f0; -fx-padding: 10;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="50">
+    <VBox layoutY="51.2" prefHeight="437.0" prefWidth="150.0" spacing="15" style="-fx-background-color: #f0f0f0; -fx-padding: 10;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="51.0">
         <Label style="-fx-font-weight: bold;" text="Navigation" />
         <Button maxWidth="Infinity" text="Dashboard" />
         <Button maxWidth="Infinity" text="Transactions" />
@@ -35,18 +35,18 @@
     </VBox>
 
     <!-- Main Content -->
-    <VBox layoutX="211.0" prefHeight="336.0" prefWidth="379.0" spacing="15" style="-fx-padding: 10;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="50">
+    <VBox layoutX="156.8" layoutY="51.2" prefHeight="394.0" prefWidth="562.0" spacing="15" style="-fx-padding: 10;" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="51.0">
 
         <!-- Event 1 & 2: Access module & input -->
         <HBox spacing="10">
-            <Label text="Select Module:" />
+            <Label prefHeight="30.0" prefWidth="78.0" text="Select Module:" />
             <ComboBox fx:id="moduleComboBox" prefWidth="200" />
-            <Label text="Transaction ID:" />
+            <Label prefHeight="33.0" prefWidth="78.0" text="Transaction ID:" />
             <TextField fx:id="transactionField" promptText="Enter Transaction ID" />
         </HBox>
 
         <!-- Event 3 & 4: Validate & Verify -->
-        <HBox spacing="10">
+        <HBox prefHeight="3.0" prefWidth="545.0" spacing="10">
             <Button fx:id="validateBtn" text="Validate Input" />
             <Button fx:id="verifyBtn" text="Verify Authenticity" />
         </HBox>
@@ -58,20 +58,20 @@
         </HBox>
 
         <!-- Event 6: Display Output -->
-        <TableView fx:id="reportTable" VBox.vgrow="ALWAYS">
+        <TableView fx:id="reportTable" prefHeight="309.0" prefWidth="539.0" VBox.vgrow="ALWAYS">
             <columns>
-                <TableColumn prefWidth="150" text="Transaction ID" />
-                <TableColumn prefWidth="100" text="Amount" />
-                <TableColumn prefWidth="100" text="Status" />
-                <TableColumn prefWidth="150" text="Date" />
-                <TableColumn prefWidth="100" text="Risk Level" />
+                <TableColumn prefWidth="111.19996011257172" text="Transaction ID" />
+                <TableColumn prefWidth="87.20001983642578" text="Amount" />
+                <TableColumn prefWidth="73.59996032714844" text="Status" />
+                <TableColumn minWidth="0.0" prefWidth="120.00003051757812" text="Date" />
+                <TableColumn prefWidth="214.39993286132812" text="Risk Level" />
             </columns>
         </TableView>
 
     </VBox>
 
     <!-- Status Bar -->
-    <HBox layoutX="220.0" layoutY="357.0" prefHeight="17.0" prefWidth="360.0" style="-fx-background-color: #dcdcdc; -fx-padding: 5;" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="20.0">
+    <HBox layoutX="166.0" layoutY="445.0" prefHeight="17.0" prefWidth="360.0" style="-fx-background-color: #dcdcdc; -fx-padding: 5;" AnchorPane.bottomAnchor="15.800000000000011" AnchorPane.leftAnchor="166.0" AnchorPane.rightAnchor="74.0">
         <Label fx:id="statusLabel" text="Ready" />
     </HBox>
 
