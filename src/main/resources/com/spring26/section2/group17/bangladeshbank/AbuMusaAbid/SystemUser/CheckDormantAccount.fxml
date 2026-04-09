@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.SystemUser.CheckDormantAccountController"
+            prefHeight="450.0" prefWidth="650.0">
+
+    <!-- Title -->
+    <Label layoutX="200.0" layoutY="10.0"
+           text="Claim Your Money (Dormant Account)"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Name / NID -->
+    <Label layoutX="50.0" layoutY="70.0" text="Name / NID:"/>
+    <TextField fx:id="nameNidField"
+               layoutX="180.0" layoutY="65.0"
+               prefWidth="250.0"/>
+
+    <!-- Bank Name (Optional) -->
+    <Label layoutX="50.0" layoutY="110.0" text="Bank Name (Optional):"/>
+    <TextField fx:id="bankNameField"
+               layoutX="180.0" layoutY="105.0"
+               prefWidth="250.0"/>
+
+    <!-- Search Button -->
+    <Button fx:id="searchButton"
+            layoutX="180.0" layoutY="150.0"
+            text="Search"
+            prefWidth="120.0"/>
+
+    <!-- Result Table -->
+    <TableView fx:id="resultTable"
+               layoutX="50.0" layoutY="200.0"
+               prefWidth="550.0" prefHeight="180.0">
+
+        <columns>
+            <TableColumn fx:id="accountNameColumn" text="Account Name" prefWidth="150.0"/>
+            <TableColumn fx:id="bankColumn" text="Bank" prefWidth="120.0"/>
+            <TableColumn fx:id="amountColumn" text="Amount" prefWidth="120.0"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="150.0"/>
+        </columns>
+
+    </TableView>
+
+    <!-- Message Label -->
+    <Label fx:id="messageLabel"
+           layoutX="50.0" layoutY="390.0"
+           text=""
+           style="-fx-text-fill: red;"/>
+
+</AnchorPane>

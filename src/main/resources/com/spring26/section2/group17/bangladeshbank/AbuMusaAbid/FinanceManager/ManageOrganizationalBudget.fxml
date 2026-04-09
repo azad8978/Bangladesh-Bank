@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.FinanceManager.ManageOrganizationalBudgetController"
+            prefHeight="450.0" prefWidth="700.0">
+
+    <!-- Title -->
+    <Label layoutX="200.0" layoutY="10.0"
+           text="Budget Management Dashboard"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Budget Name -->
+    <Label layoutX="50.0" layoutY="70.0" text="Budget Name:"/>
+    <TextField fx:id="budgetNameField"
+               layoutX="200.0" layoutY="65.0"
+               prefWidth="250.0"/>
+
+    <!-- Fiscal Period -->
+    <Label layoutX="50.0" layoutY="110.0" text="Fiscal Period:"/>
+    <TextField fx:id="fiscalPeriodField"
+               layoutX="200.0" layoutY="105.0"
+               prefWidth="250.0"
+               promptText="e.g. 2025-2026"/>
+
+    <!-- Total Amount -->
+    <Label layoutX="50.0" layoutY="150.0" text="Total Amount:"/>
+    <TextField fx:id="amountField"
+               layoutX="200.0" layoutY="145.0"
+               prefWidth="250.0"/>
+
+    <!-- Create Button -->
+    <Button fx:id="createButton"
+            layoutX="200.0" layoutY="190.0"
+            text="Create New Budget"
+            prefWidth="180.0"/>
+
+    <!-- Budget Table -->
+    <TableView fx:id="budgetTable"
+               layoutX="50.0" layoutY="240.0"
+               prefWidth="600.0" prefHeight="170.0">
+
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Budget Name" prefWidth="150.0"/>
+            <TableColumn fx:id="periodColumn" text="Fiscal Period" prefWidth="150.0"/>
+            <TableColumn fx:id="amountColumn" text="Total Amount" prefWidth="150.0"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="150.0"/>
+        </columns>
+
+    </TableView>
+
+    <!-- Message Label -->
+    <Label fx:id="messageLabel"
+           layoutX="50.0" layoutY="420.0"
+           text=""
+           style="-fx-text-fill: green;"/>
+
+</AnchorPane>
