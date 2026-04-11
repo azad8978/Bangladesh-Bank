@@ -2,9 +2,9 @@ package com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.FinanceManager;
 
 import com.spring26.section2.group17.bangladeshbank.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 
-public class DeshbordController
-{
+public class DeshbordController {
     @javafx.fxml.FXML
     public void initialize() {
     }
@@ -13,8 +13,7 @@ public class DeshbordController
     public void MonitorExpenditures(ActionEvent actionEvent) {
         try {
             SceneSwitcher.switchTo("AbuMusaAbid/FinanceManager/MonitorExpenditures.fxml");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -23,8 +22,7 @@ public class DeshbordController
     public void GenerateFinancial(ActionEvent actionEvent) {
         try {
             SceneSwitcher.switchTo("AbuMusaAbid/FinanceManager/GenerateFinancialReports.fxml");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -33,8 +31,7 @@ public class DeshbordController
     public void MonitorFinancialSummary(ActionEvent actionEvent) {
         try {
             SceneSwitcher.switchTo("AbuMusaAbid/FinanceManager/MonitorFinancialSummary.fxml");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -43,8 +40,7 @@ public class DeshbordController
     public void TrackRevenuesSourses(ActionEvent actionEvent) {
         try {
             SceneSwitcher.switchTo("AbuMusaAbid/FinanceManager/TrackRevenueSources.fxml");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -53,8 +49,7 @@ public class DeshbordController
     public void ApproveBudget(ActionEvent actionEvent) {
         try {
             SceneSwitcher.switchTo("AbuMusaAbid/FinanceManager/ApproveBudgetAllocations .fxml");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -63,8 +58,7 @@ public class DeshbordController
     public void BackButton(ActionEvent actionEvent) {
         try {
             SceneSwitcher.switchTo("Towhid/Dashboard.fxml");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -73,8 +67,7 @@ public class DeshbordController
     public void TrackFundInflows(ActionEvent actionEvent) {
         try {
             SceneSwitcher.switchTo("AbuMusaAbid/FinanceManager/TrackFundInflows.fxml");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

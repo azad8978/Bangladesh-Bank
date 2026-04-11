@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="558.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.ForeignExchangeControlOfficer.DeshbordController">
+   <children>
+      <Button layoutX="162.0" layoutY="49.0" mnemonicParsing="false" onAction="#RegulationofForeignCurrencyTransactions" style="-fx-background-color: red;" text="Regulation of Foreign Currency Transactions">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="171.0" layoutY="112.0" mnemonicParsing="false" onAction="#MonitoringCrossBorderTradePayments" style="-fx-background-color: blue;" text="Monitoring Cross-Border Trade Payments" textFill="#f8f5f5">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="203.0" layoutY="165.0" mnemonicParsing="false" onAction="#ExchangeRateStabilityControl" style="-fx-background-color: orange;" text="Exchange Rate Stability Control">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="164.0" layoutY="229.0" mnemonicParsing="false" onAction="#AntiMoneyLaunderingAMLEnforcement" style="-fx-background-color: green;" text="Anti-Money Laundering (AML) Enforcement" textFill="#fffefe">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="172.0" layoutY="279.0" mnemonicParsing="false" onAction="#SupervisionofAuthorizedDealerADBanks" style="-fx-background-color: violet;" text="Supervision of Authorized Dealer (AD) Banks">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="238.0" layoutY="339.0" mnemonicParsing="false" onAction="#FXPolicyImplementation" style="-fx-background-color: indigo;" text="FX Policy Implementation" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="224.0" layoutY="394.0" mnemonicParsing="false" onAction="#RemittanceFlowRegulation" style="-fx-background-color: yellow;" text="Remittance Flow Regulation">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="213.0" layoutY="453.0" mnemonicParsing="false" onAction="#FXDataIntelligenceReporting" prefHeight="27.0" prefWidth="216.0" style="-fx-background-color: brown;" text="FX Data Intelligence &amp; Reporting" textFill="#fff8f8">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="509.0" layoutY="518.0" mnemonicParsing="false" onAction="#BackButton" prefHeight="26.0" prefWidth="63.0" style="-fx-background-color: red;" text="Back" textFill="#f5f2f2">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

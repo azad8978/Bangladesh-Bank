@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="558.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.PaymentSystemsOfficer.DeshbordController">
+   <children>
+      <Button layoutX="183.0" layoutY="49.0" mnemonicParsing="false" onAction="#ManageElectronicFundTransfers" style="-fx-background-color: red;" text="Manage Electronic Fund Transfers">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="192.0" layoutY="106.0" mnemonicParsing="false" onAction="#MonitorTransactionSettlement" style="-fx-background-color: blue;" text="Monitor Transaction Settlement" textFill="#f8f5f5">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="169.0" layoutY="169.0" mnemonicParsing="false" onAction="#OverseePaymentGatewayOperations" style="-fx-background-color: orange;" text="Oversee Payment Gateway Operations">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="194.0" layoutY="226.0" mnemonicParsing="false" onAction="#EnsureRegulatoryCompliance" style="-fx-background-color: green;" text="Ensure Regulatory Compliance" textFill="#fffefe">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="213.0" layoutY="279.0" mnemonicParsing="false" onAction="#HandleDisputeResolution" style="-fx-background-color: violet;" text="Handle Dispute Resolution">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="229.0" layoutY="339.0" mnemonicParsing="false" onAction="#MonitorFraudRisk" style="-fx-background-color: indigo;" text="Monitor Fraud &amp; Risk" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="190.0" layoutY="400.0" mnemonicParsing="false" onAction="#ManageBankPSPIntegration" style="-fx-background-color: yellow;" text="Manage Bank &amp; PSP Integration">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="210.0" layoutY="454.0" mnemonicParsing="false" onAction="#GeneratePaymentPerformanceReports" prefHeight="27.0" prefWidth="180.0" style="-fx-background-color: brown;" text="Generate Payment Performance Reports" textFill="#fff8f8">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="509.0" layoutY="518.0" mnemonicParsing="false" onAction="#BackButton" prefHeight="26.0" prefWidth="63.0" style="-fx-background-color: red;" text="Back" textFill="#f5f2f2">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
