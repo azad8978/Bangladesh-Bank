@@ -47,13 +47,11 @@ public class ManageUserAccessViolationsController {
 
     private ObservableList<Object[]> violationList;
 
-    // =========================
-    // INIT
-    // =========================
+
     @FXML
     public void initialize() {
 
-        // ✔ Dummy data (ArrayList)
+
         ArrayList<Object[]> list = new ArrayList<>();
 
         list.add(new Object[]{"U101", "Multiple Login Failures", "2026-04-10"});
@@ -64,7 +62,7 @@ public class ManageUserAccessViolationsController {
 
         violationList = FXCollections.observableArrayList(list);
 
-        // ✔ Column binding (NO MODEL CLASS)
+
         userIdColumn.setCellValueFactory(data ->
                 new SimpleStringProperty(data.getValue()[0].toString()));
 
@@ -76,7 +74,7 @@ public class ManageUserAccessViolationsController {
 
         violationTable.setItems(violationList);
 
-        // ✔ ComboBox data
+
         durationComboBox.setItems(FXCollections.observableArrayList(
                 "1 Day",
                 "7 Days",
@@ -84,7 +82,7 @@ public class ManageUserAccessViolationsController {
                 "Permanent"
         ));
 
-        // ✔ Row selection feedback
+
         violationTable.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
                 notesArea.setText("Selected User: " + newVal[0]);
@@ -92,9 +90,6 @@ public class ManageUserAccessViolationsController {
         });
     }
 
-    // =========================
-    // APPLY RESTRICTION
-    // =========================
     @FXML
     public void applyrestriction(ActionEvent actionEvent) {
 
@@ -121,9 +116,7 @@ public class ManageUserAccessViolationsController {
         );
     }
 
-    // =========================
-    // RESTRICT ACCESS
-    // =========================
+
     @FXML
     public void restrictaccess(ActionEvent actionEvent) {
 
@@ -137,9 +130,7 @@ public class ManageUserAccessViolationsController {
         notesArea.setText("🚫 Access Restricted for User: " + selected[0]);
     }
 
-    // =========================
-    // CLEAR
-    // =========================
+
     @FXML
     public void clear(ActionEvent actionEvent) {
         userIdField.clear();
@@ -148,9 +139,7 @@ public class ManageUserAccessViolationsController {
         violationTable.getSelectionModel().clearSelection();
     }
 
-    // =========================
-    // BACK BUTTON
-    // =========================
+
     @FXML
     public void ButtonOA(ActionEvent actionEvent) {
         try {
@@ -160,9 +149,6 @@ public class ManageUserAccessViolationsController {
         }
     }
 
-    // =========================
-    // ALERT METHOD
-    // =========================
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle(title);

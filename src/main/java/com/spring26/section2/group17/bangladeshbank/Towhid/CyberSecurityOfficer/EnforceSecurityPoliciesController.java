@@ -26,16 +26,16 @@ public class EnforceSecurityPoliciesController {
     @FXML
     private TextArea statusArea;
 
-    // ✅ INITIALIZE WITH ARRAYLIST DUMMY DATA
+
     @FXML
     public void initialize() {
 
-        // 🔥 FIX COLUMN BINDING (MOST IMPORTANT)
+
         PolicyAP.setCellValueFactory(new PropertyValueFactory<>("policy"));
         StatusAP.setCellValueFactory(new PropertyValueFactory<>("status"));
         LastAP.setCellValueFactory(new PropertyValueFactory<>("lastUpdated"));
 
-        // ✅ ARRAYLIST DUMMY DATA
+
         ArrayList<PolicyData> list = new ArrayList<>();
 
         list.add(new PolicyData("Password Policy", "Active", "2026-04-10"));
@@ -48,7 +48,7 @@ public class EnforceSecurityPoliciesController {
         statusArea.setText("✔ Security policies loaded successfully.");
     }
 
-    // 🔥 BUTTON ACTION (ENFORCE POLICIES)
+
     @FXML
     public void enforccepolicy(ActionEvent actionEvent) {
 
@@ -64,7 +64,6 @@ public class EnforceSecurityPoliciesController {
         statusArea.setText("✔ All policies have been enforced.");
     }
 
-    // 🔙 BACK BUTTON
     @FXML
     public void ButtonOA(ActionEvent actionEvent) {
         try {
@@ -76,7 +75,7 @@ public class EnforceSecurityPoliciesController {
         }
     }
 
-    // ✅ MODEL CLASS (REQUIRED FOR TABLE)
+
     public static class PolicyData {
 
         private String policy;

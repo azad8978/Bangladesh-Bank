@@ -28,4 +28,12 @@ public class DashboardController
             e.printStackTrace();
         }
     }
+
+    @javafx.fxml.FXML
+    public void button4_oa(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void button3_oa(ActionEvent actionEvent) {
+    }
 }

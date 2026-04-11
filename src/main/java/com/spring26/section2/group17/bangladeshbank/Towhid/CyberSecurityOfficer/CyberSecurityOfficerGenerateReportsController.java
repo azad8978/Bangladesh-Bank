@@ -39,15 +39,15 @@ public class CyberSecurityOfficerGenerateReportsController {
     @FXML
     public void initialize() {
 
-        // 🔥 FIX: ensure clean list
+
         reportList = FXCollections.observableArrayList();
 
-        // 🔥 MUST match getters EXACTLY
+
         ParameterDA.setCellValueFactory(new PropertyValueFactory<>("parameter"));
         VauleDA.setCellValueFactory(new PropertyValueFactory<>("value"));
         StarusDA.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        // 🔥 Dummy data
+
         reportList.addAll(
                 new ReportData("Login Attempts", "150", "Normal"),
                 new ReportData("Failed Logins", "23", "Warning"),

@@ -52,10 +52,10 @@ public class InvestigateSuspiciousActivitiesController {
     @FXML
     private HBox severitylevel;
 
-    // Table data
+
     private ObservableList<Object[]> logList;
 
-    // Save investigation records
+
     private ArrayList<String> investigationRecords;
 
     @FXML
@@ -63,7 +63,7 @@ public class InvestigateSuspiciousActivitiesController {
 
         investigationRecords = new ArrayList<>();
 
-        // 🔥 Dummy data (ArrayList)
+
         ArrayList<Object[]> list = new ArrayList<>();
         list.add(new Object[]{"192.168.1.1", "Login Attempt", "2026-04-11 10:00"});
         list.add(new Object[]{"10.0.0.5", "File Access", "2026-04-11 10:10"});
@@ -72,7 +72,7 @@ public class InvestigateSuspiciousActivitiesController {
 
         logList = FXCollections.observableArrayList(list);
 
-        // Column mapping (NO MODEL CLASS)
+
         sourceColumn.setCellValueFactory(data ->
                 new SimpleStringProperty(data.getValue()[0].toString()));
 
@@ -153,7 +153,7 @@ public class InvestigateSuspiciousActivitiesController {
 
         notesArea.setText("✅ Investigation Saved!\n\n" + record);
 
-        // clear inputs
+
         investigatorField.clear();
         passwordField.clear();
         categoryComboBox.setValue(null);

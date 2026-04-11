@@ -22,16 +22,16 @@ public class InitiateIncidentResponseController {
     @FXML
     private ComboBox<String> severityComboBox;
 
-    // ArrayList to store incidents
+
     private ArrayList<String> incidentList;
 
     @FXML
     public void initialize() {
 
-        // Initialize ArrayList
+
         incidentList = new ArrayList<>();
 
-        // Event 2: System displays form data (dummy values)
+
         incidentTypeComboBox.getItems().addAll(
                 "Unauthorized Access",
                 "Phishing Attack",
@@ -50,7 +50,7 @@ public class InitiateIncidentResponseController {
     @FXML
     public void ButtonOA(ActionEvent actionEvent) {
         try {
-            // Event 1: Navigate to Incident Response page
+
             SceneSwitcher.switchTo("Towhid/CyberSecurityOfficer/DashboardCSO.fxml");
         } catch (Exception e) {
             e.printStackTrace();
@@ -70,7 +70,7 @@ public class InitiateIncidentResponseController {
             return;
         }
 
-        // Event 5: System records incident
+
         String incidentRecord = "Incident Type: " + type +
                 "\nSeverity: " + severity +
                 "\nDescription: " + description +
@@ -78,13 +78,13 @@ public class InitiateIncidentResponseController {
 
         incidentList.add(incidentRecord);
 
-        // Simulate notification
+
         String notification = "\n\n📢 Stakeholders Notified Successfully!";
 
-        // Show output
+
         statusArea.setText("✅ Incident Recorded!\n\n" + incidentRecord + notification);
 
-        // Clear fields
+
         incidentTypeComboBox.setValue(null);
         severityComboBox.setValue(null);
         descriptionArea.clear();
