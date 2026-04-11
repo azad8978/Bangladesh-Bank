@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="558.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.FinanceManager.DeshbordController">
+   <children>
+      <Button layoutX="243.0" layoutY="45.0" mnemonicParsing="false" onAction="#MonitorFinancialSummary" style="-fx-background-color: red;" text="Monitor Financial Summary">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="243.0" layoutY="101.0" mnemonicParsing="false" onAction="#ApproveBudget" style="-fx-background-color: blue;" text=" Approve Budget" textFill="#f8f5f5">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="243.0" layoutY="161.0" mnemonicParsing="false" onAction="#TrackFundInflows" style="-fx-background-color: orange;" text="Track Fund Inflows">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="243.0" layoutY="221.0" mnemonicParsing="false" onAction="#MonitorExpenditures" style="-fx-background-color: green;" text=" Monitor Expenditures" textFill="#fffefe">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="243.0" layoutY="279.0" mnemonicParsing="false" onAction="#MonitorExpenditures" style="-fx-background-color: violet;" text=" Manage Organizational">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="243.0" layoutY="339.0" mnemonicParsing="false" onAction="#GenerateFinancial" style="-fx-background-color: indigo;" text="  Generate Financial" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="243.0" layoutY="393.0" mnemonicParsing="false" onAction="#TrackRevenuesSourses" style="-fx-background-color: yellow;" text=" Track Revenue Sources">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="243.0" layoutY="453.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="180.0" style="-fx-background-color: brown;" text="  Review Financial History" textFill="#fff8f8">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="509.0" layoutY="518.0" mnemonicParsing="false" onAction="#BackButton" prefHeight="26.0" prefWidth="63.0" style="-fx-background-color: red;" text="Back" textFill="#f5f2f2">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

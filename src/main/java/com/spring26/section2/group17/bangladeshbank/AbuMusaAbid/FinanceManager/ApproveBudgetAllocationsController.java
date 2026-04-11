@@ -1,5 +1,6 @@
 package com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.FinanceManager;
 
+import com.spring26.section2.group17.bangladeshbank.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
@@ -30,5 +31,11 @@ public class ApproveBudgetAllocationsController
 
     @javafx.fxml.FXML
     public void BackButton(ActionEvent actionEvent) {
+        try {
+            SceneSwitcher.switchTo("AbuMusaAbid/FinanceManager/Deshbord.fxml");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

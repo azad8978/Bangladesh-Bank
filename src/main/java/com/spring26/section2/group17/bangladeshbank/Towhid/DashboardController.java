@@ -31,9 +31,21 @@ public class DashboardController
 
     @javafx.fxml.FXML
     public void button4_oa(ActionEvent actionEvent) {
+        try{
+            SceneSwitcher.switchTo("AbuMusaAbid/FinanceManager/Deshbord.fxml");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @javafx.fxml.FXML
     public void button3_oa(ActionEvent actionEvent) {
+        try{
+            SceneSwitcher.switchTo("AbuMusaAbid/SystemUser/Deshbord.fxml");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
