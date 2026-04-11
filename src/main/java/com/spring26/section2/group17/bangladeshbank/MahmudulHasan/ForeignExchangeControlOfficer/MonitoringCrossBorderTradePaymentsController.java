@@ -34,22 +34,39 @@ public class MonitoringCrossBorderTradePaymentsController {
     @FXML private TableColumn<TradeRecord, String> colStatus;
 
 
-    private ObservableList<TradeRecord> records = FXCollections.observableArrayList();
+    private final ObservableList<TradeRecord> records = FXCollections.observableArrayList();
 
 
 
     @FXML
     public void initialize() {
 
-        colLC.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getLc()));
-        colInvoice.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getInvoice()));
-        colExporter.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getExporter()));
-        colImporter.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getImporter()));
-        colStatus.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getStatus()));
+        // Safety check (prevents NullPointerException)
+        if (historyTable == null) {
+            System.out.println("TableView not injected! Check fx:id in FXML");
+            return;
+        }
+
+        colLC.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getLc()));
+
+        colInvoice.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getInvoice()));
+
+        colExporter.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getExporter()));
+
+        colImporter.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getImporter()));
+
+        colStatus.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getStatus()));
 
         historyTable.setItems(records);
 
-        statusLabel.setText("System Ready...");
+        if (statusLabel != null) {
+            statusLabel.setText("System Ready...");
+        }
     }
 
 
@@ -57,7 +74,10 @@ public class MonitoringCrossBorderTradePaymentsController {
     @FXML
     private void handleEnterPortal() {
         showAlert("Access Granted", "Welcome to Trade FX Monitoring System");
-        statusLabel.setText("Portal Accessed");
+
+        if (statusLabel != null) {
+            statusLabel.setText("Portal Accessed");
+        }
     }
 
 
@@ -68,7 +88,10 @@ public class MonitoringCrossBorderTradePaymentsController {
         if (!isInputValid()) return;
 
         showAlert("Success", "Trade data submitted");
-        statusLabel.setText("Data Submitted");
+
+        if (statusLabel != null) {
+            statusLabel.setText("Data Submitted");
+        }
     }
 
 
@@ -77,14 +100,19 @@ public class MonitoringCrossBorderTradePaymentsController {
     private void handleVerify() {
 
         if (!invoiceCheck.isSelected() || !shipmentCheck.isSelected()) {
-            statusLabel.setText("Verification Failed ❌");
+
+            if (statusLabel != null) {
+                statusLabel.setText("Verification Failed ❌");
+            }
+
             showAlert("Error", "All documents must be verified");
             return;
         }
 
-        statusLabel.setText("Verified ✔");
+        if (statusLabel != null) {
+            statusLabel.setText("Verified ✔");
+        }
 
-        // Save to history after verification
         records.add(new TradeRecord(
                 lcField.getText(),
                 invoiceField.getText(),
@@ -100,11 +128,11 @@ public class MonitoringCrossBorderTradePaymentsController {
 
     private boolean isInputValid() {
 
-        if (lcField.getText().isEmpty() ||
-                invoiceField.getText().isEmpty() ||
-                exporterField.getText().isEmpty() ||
-                importerField.getText().isEmpty() ||
-                amountField.getText().isEmpty()) {
+        if (lcField.getText().isEmpty()
+                || invoiceField.getText().isEmpty()
+                || exporterField.getText().isEmpty()
+                || importerField.getText().isEmpty()
+                || amountField.getText().isEmpty()) {
 
             showAlert("Missing Data", "Fill all fields");
             return false;
@@ -134,8 +162,9 @@ public class MonitoringCrossBorderTradePaymentsController {
         exporterField.clear();
         importerField.clear();
         amountField.clear();
-        invoiceCheck.setSelected(false);
-        shipmentCheck.setSelected(false);
+
+        if (invoiceCheck != null) invoiceCheck.setSelected(false);
+        if (shipmentCheck != null) shipmentCheck.setSelected(false);
     }
 
     private void showAlert(String title, String message) {

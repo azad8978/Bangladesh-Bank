@@ -11,7 +11,7 @@ public class DeshbordController {
     @javafx.fxml.FXML
     public void ManageElectronicFundTransfers(ActionEvent actionEvent) {
         try {
-            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/RegulationofForeignCurrencyTransactions.fxml");
+            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/ManageElectronicFundTransfers.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -20,7 +20,7 @@ public class DeshbordController {
     @javafx.fxml.FXML
     public void MonitorTransactionSettlement(ActionEvent actionEvent) {
         try {
-            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/MonitoringCross-BorderTradePaymentsController.fxml");
+            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/MonitorTransactionSettlement.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -29,7 +29,7 @@ public class DeshbordController {
     @javafx.fxml.FXML
     public void OverseePaymentGatewayOperations(ActionEvent actionEvent) {
         try {
-            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/ExchangeRateStabilityControl.fxml");
+            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/OverseePaymentGatewayOperations.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -38,7 +38,7 @@ public class DeshbordController {
     @javafx.fxml.FXML
     public void EnsureRegulatoryCompliance(ActionEvent actionEvent) {
         try {
-            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/Anti-MoneyLaundering(AML)Enforcement.fxml");
+            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/EnsureRegulatoryCompliance.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -47,7 +47,7 @@ public class DeshbordController {
     @javafx.fxml.FXML
     public void HandleDisputeResolution(ActionEvent actionEvent) {
         try {
-            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/SupervisionofAuthorizedDealer(AD)Banks.fxml");
+            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/HandleDisputeResolution.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -65,7 +65,7 @@ public class DeshbordController {
     @javafx.fxml.FXML
     public void MonitorFraudRisk(ActionEvent actionEvent) {
         try {
-            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/FXPolicyImplementation.fxml");
+            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/MonitorFraud&Risk.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,7 +74,7 @@ public class DeshbordController {
     @javafx.fxml.FXML
     public void ManageBankPSPIntegration(ActionEvent actionEvent) {
         try {
-            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/RemittanceFlowRegulation.fxml");
+            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/ManageBank&PSPIntegration.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -83,7 +83,7 @@ public class DeshbordController {
     @javafx.fxml.FXML
     public void GeneratePaymentPerformanceReports(ActionEvent actionEvent) {
         try {
-            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/FXDataIntelligence&Reporting.fxml");
+            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/GeneratePaymentPerformanceReports.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
