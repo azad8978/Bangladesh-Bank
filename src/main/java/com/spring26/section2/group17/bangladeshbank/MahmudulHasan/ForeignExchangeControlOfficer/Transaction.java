@@ -22,3 +22,4 @@ public class Transaction {
     public String getPurpose() { return purpose; }
     public String getStatus() { return status; }
 }
+

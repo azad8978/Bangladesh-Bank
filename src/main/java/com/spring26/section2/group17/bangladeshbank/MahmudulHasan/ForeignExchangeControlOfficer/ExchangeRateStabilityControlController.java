@@ -1,63 +1,169 @@
 package com.spring26.section2.group17.bangladeshbank.MahmudulHasan.ForeignExchangeControlOfficer;
 
-import javafx.event.ActionEvent;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class ExchangeRateStabilityControlController
-{
+public class ExchangeRateStabilityControlController {
 
-    @javafx.fxml.FXML
-    private Button btnSubmitFX;
-    @javafx.fxml.FXML
-    private Button btnAnalyze;
-    @javafx.fxml.FXML
-    private TextField buyRateField;
-    @javafx.fxml.FXML
-    private Label volatilityLabel;
-    @javafx.fxml.FXML
-    private TableColumn colVolatility;
-    @javafx.fxml.FXML
-    private Button btnOpenModule;
-    @javafx.fxml.FXML
-    private DatePicker datePicker;
-    @javafx.fxml.FXML
-    private Label deviationLabel;
-    @javafx.fxml.FXML
-    private TextField bankField;
-    @javafx.fxml.FXML
-    private ComboBox currencyBox;
-    @javafx.fxml.FXML
-    private ProgressBar stabilityBar;
-    @javafx.fxml.FXML
-    private TableView historyTable;
-    @javafx.fxml.FXML
-    private TextField sellRateField;
-    @javafx.fxml.FXML
-    private TableColumn colBank;
-    @javafx.fxml.FXML
-    private TableColumn colBuy;
-    @javafx.fxml.FXML
-    private TableColumn colSell;
-    @javafx.fxml.FXML
-    private TableColumn colCurrency;
+    // ================= UI =================
 
-    @javafx.fxml.FXML
+    @FXML private TextField bankField;
+    @FXML private ComboBox<String> currencyBox;
+    @FXML private TextField buyRateField;
+    @FXML private TextField sellRateField;
+    @FXML private DatePicker datePicker;
+
+    @FXML private Label volatilityLabel;
+    @FXML private Label deviationLabel;
+    @FXML private ProgressBar stabilityBar;
+
+    @FXML private TableView<FXRecord> historyTable;
+
+    @FXML private TableColumn<FXRecord, String> colBank;
+    @FXML private TableColumn<FXRecord, String> colCurrency;
+    @FXML private TableColumn<FXRecord, Double> colBuy;
+    @FXML private TableColumn<FXRecord, Double> colSell;
+    @FXML private TableColumn<FXRecord, Double> colVolatility;
+
+    @FXML private Button btnOpenModule;
+    @FXML private Button btnSubmitFX;
+    @FXML private Button btnAnalyze;
+
+    // ================= DATA =================
+
+    private ObservableList<FXRecord> records = FXCollections.observableArrayList();
+
+    private double lastVolatility = 0;
+    private double lastDeviation = 0;
+
+    // ================= INITIALIZE =================
+
+    @FXML
     public void initialize() {
+
+        currencyBox.getItems().addAll("USD", "EUR", "GBP", "JPY", "BDT");
+
+        colBank.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getBank()));
+        colCurrency.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getCurrency()));
+        colBuy.setCellValueFactory(data -> new SimpleDoubleProperty(data.getValue().getBuy()).asObject());
+        colSell.setCellValueFactory(data -> new SimpleDoubleProperty(data.getValue().getSell()).asObject());
+        colVolatility.setCellValueFactory(data -> new SimpleDoubleProperty(data.getValue().getVolatility()).asObject());
+
+        historyTable.setItems(records);
+
+        stabilityBar.setProgress(0);
     }
 
-    @Deprecated
-    public void handleSave(ActionEvent actionEvent) {
+    // ================= EVENT 1 =================
+
+    @FXML
+    private void handleOpenModule() {
+        showAlert("Module Opened", "FX Control Panel Activated");
     }
 
-    @Deprecated
-    public void handleValidate(ActionEvent actionEvent) {
+    // ================= EVENT 2 =================
+
+    @FXML
+    private void handleSubmitFX() {
+
+        if (!isValidInput()) return;
+
+        showAlert("Submitted", "FX Data Captured Successfully");
     }
 
-    @Deprecated
-    public void handleReject(ActionEvent actionEvent) {
+    // ================= EVENT 3 =================
+
+    @FXML
+    private void handleAnalyze() {
+
+        if (!isValidInput()) return;
+
+        double buy = Double.parseDouble(buyRateField.getText());
+        double sell = Double.parseDouble(sellRateField.getText());
+
+        // CORE CALCULATION
+        lastVolatility = Math.abs(sell - buy);
+        lastDeviation = lastVolatility / buy;
+
+        volatilityLabel.setText(String.format("%.2f", lastVolatility));
+        deviationLabel.setText(String.format("%.4f", lastDeviation));
+
+        updateStabilityBar();
+
+        // SAVE DATA
+        records.add(new FXRecord(
+                bankField.getText(),
+                currencyBox.getValue(),
+                buy,
+                sell,
+                lastVolatility
+        ));
+
+        clearFields();
     }
 
-    @Deprecated
-    public void handleApprove(ActionEvent actionEvent) {
+    // ================= STABILITY ENGINE =================
+
+    private void updateStabilityBar() {
+
+        if (lastDeviation < 0.02) {
+            stabilityBar.setProgress(0.9); // Stable
+        } else if (lastDeviation < 0.05) {
+            stabilityBar.setProgress(0.6); // Moderate
+        } else {
+            stabilityBar.setProgress(0.3); // Risky
+        }
+    }
+
+    // ================= VALIDATION =================
+
+    private boolean isValidInput() {
+
+        if (bankField.getText().isEmpty() ||
+                currencyBox.getValue() == null ||
+                buyRateField.getText().isEmpty() ||
+                sellRateField.getText().isEmpty() ||
+                datePicker.getValue() == null) {
+
+            showAlert("Missing Data", "Fill all fields properly");
+            return false;
+        }
+
+        try {
+            double buy = Double.parseDouble(buyRateField.getText());
+            double sell = Double.parseDouble(sellRateField.getText());
+
+            if (buy <= 0 || sell <= 0) {
+                showAlert("Invalid Rate", "Rates must be positive");
+                return false;
+            }
+
+        } catch (Exception e) {
+            showAlert("Error", "Rates must be numeric");
+            return false;
+        }
+
+        return true;
+    }
+
+    // ================= UTIL =================
+
+    private void clearFields() {
+        bankField.clear();
+        currencyBox.setValue(null);
+        buyRateField.clear();
+        sellRateField.clear();
+        datePicker.setValue(null);
+    }
+
+    private void showAlert(String title, String msg) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setContentText(msg);
+        alert.show();
     }
 }
