@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.SystemUser.TrackRequestStatusController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="452.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.SystemUser.TrackRequestStatusController">
 
     <!-- Title -->
-    <Label layoutX="200.0" layoutY="10.0" text="Track Request Status" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <Label layoutX="200.0" layoutY="10.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Track Request Status" />
 
     <!-- TableView for Requests -->
-    <TableView fx:id="requestTable" layoutX="50.0" layoutY="50.0" prefWidth="500.0" prefHeight="200.0">
+    <TableView fx:id="requestTable" layoutX="50.0" layoutY="50.0" prefHeight="200.0" prefWidth="500.0">
         <columns>
-            <TableColumn fx:id="idColumn" text="Request ID" prefWidth="100.0"/>
-            <TableColumn fx:id="typeColumn" text="Type" prefWidth="120.0"/>
-            <TableColumn fx:id="dateColumn" text="Date" prefWidth="140.0"/>
-            <TableColumn fx:id="statusColumn" text="Status" prefWidth="140.0"/>
+            <TableColumn fx:id="idColumn" prefWidth="100.0" text="Request ID" />
+            <TableColumn fx:id="typeColumn" prefWidth="120.0" text="Type" />
+            <TableColumn fx:id="dateColumn" prefWidth="140.0" text="Date" />
+            <TableColumn fx:id="statusColumn" prefWidth="140.0" text="Status" />
         </columns>
     </TableView>
 
     <!-- Timeline Label -->
-    <Label layoutX="50.0" layoutY="270.0" text="Request Timeline:"/>
+    <Label layoutX="50.0" layoutY="270.0" text="Request Timeline:" />
 
     <!-- TextArea to show timeline -->
-    <TextArea fx:id="timelineArea" layoutX="50.0" layoutY="290.0" prefWidth="500.0" prefHeight="90.0" editable="false"/>
+    <TextArea fx:id="timelineArea" editable="false" layoutX="50.0" layoutY="290.0" prefHeight="90.0" prefWidth="500.0" />
+   <Button layoutX="253.0" layoutY="399.0" mnemonicParsing="false" onAction="#BackButton" text="Back" />
 
 </AnchorPane>

@@ -1,5 +1,6 @@
 package com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.SystemUser;
 
+import javafx.event.ActionEvent;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.Button;
@@ -23,4 +24,9 @@ public class ViewSimulationDashboardsController
 
     @javafx.fxml.FXML
     public void initialize() {
-    }}
+    }
+
+    @javafx.fxml.FXML
+    public void BackButton(ActionEvent actionEvent) {
+    }
+}

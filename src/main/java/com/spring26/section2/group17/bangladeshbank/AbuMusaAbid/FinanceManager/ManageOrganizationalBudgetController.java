@@ -1,5 +1,6 @@
 package com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.FinanceManager;
 
+import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
 public class ManageOrganizationalBudgetController
@@ -27,4 +28,9 @@ public class ManageOrganizationalBudgetController
 
     @javafx.fxml.FXML
     public void initialize() {
-    }}
+    }
+
+    @javafx.fxml.FXML
+    public void BackButton(ActionEvent actionEvent) {
+    }
+}
