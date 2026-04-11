@@ -10,7 +10,7 @@ import javafx.scene.control.*;
 
 public class RegulationofForeignCurrencyTransactionsController {
 
-    // ================= UI COMPONENTS =================
+
 
     @FXML private TextField senderField;
     @FXML private TextField receiverField;
@@ -25,11 +25,10 @@ public class RegulationofForeignCurrencyTransactionsController {
     @FXML private TableColumn<Transaction, String> colPurpose;
     @FXML private TableColumn<Transaction, String> colStatus;
 
-    // ================= DATA STORAGE =================
+
 
     private ObservableList<Transaction> transactions = FXCollections.observableArrayList();
 
-    // ================= INITIALIZATION =================
 
     @FXML
     public void initialize() {
@@ -43,7 +42,7 @@ public class RegulationofForeignCurrencyTransactionsController {
         transactionTable.setItems(transactions);
     }
 
-    // ================= BUTTON ACTIONS =================
+
 
     @FXML
     public void handleValidate(ActionEvent event) {
@@ -74,7 +73,7 @@ public class RegulationofForeignCurrencyTransactionsController {
         showAlert(Alert.AlertType.INFORMATION, "Saved", "Transaction saved successfully (Simulation)");
     }
 
-    // ================= CORE LOGIC =================
+
 
     private void addTransaction(String status) {
 
@@ -98,7 +97,7 @@ public class RegulationofForeignCurrencyTransactionsController {
         }
     }
 
-    // ================= VALIDATION =================
+
 
     private boolean isInputValid() {
 
@@ -121,7 +120,7 @@ public class RegulationofForeignCurrencyTransactionsController {
         return true;
     }
 
-    // ================= UTILITIES =================
+
 
     private void clearFields() {
         senderField.clear();

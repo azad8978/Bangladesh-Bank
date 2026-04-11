@@ -98,4 +98,6 @@ public class DeshbordController {
         }
     }
 
+    public void AntiMoneyLaunderingAMLEnforcement(ActionEvent actionEvent) {
+    }
 }

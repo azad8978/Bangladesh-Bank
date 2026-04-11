@@ -10,8 +10,6 @@ import javafx.scene.control.*;
 
 public class AntiMoneyLaunderingAMLEnforcementController {
 
-    // ================= UI =================
-
     @FXML private TextField accountField;
     @FXML private TextField transactionField;
     @FXML private TextField amountField;
@@ -32,13 +30,12 @@ public class AntiMoneyLaunderingAMLEnforcementController {
     @FXML private Button btnSubmit;
     @FXML private Button btnAnalyze;
 
-    // ================= DATA =================
+
 
     private ObservableList<AMLRecord> records = FXCollections.observableArrayList();
 
     private double currentRisk = 0;
 
-    // ================= INITIALIZE =================
 
     @FXML
     public void initialize() {
@@ -55,7 +52,7 @@ public class AntiMoneyLaunderingAMLEnforcementController {
         alertLabel.setText("System idle...");
     }
 
-    // ================= EVENT 1 =================
+
 
     @FXML
     private void handleStart() {
@@ -63,7 +60,6 @@ public class AntiMoneyLaunderingAMLEnforcementController {
         alertLabel.setText("Monitoring active...");
     }
 
-    // ================= EVENT 2 =================
 
     @FXML
     private void handleSubmit() {
@@ -73,7 +69,7 @@ public class AntiMoneyLaunderingAMLEnforcementController {
         showAlert("Submitted", "Transaction captured for analysis");
     }
 
-    // ================= EVENT 3 =================
+
 
     @FXML
     private void handleAnalyze() {
@@ -109,7 +105,7 @@ public class AntiMoneyLaunderingAMLEnforcementController {
         clearFields();
     }
 
-    // ================= ALERT ENGINE =================
+
 
     private void updateAlert() {
 
@@ -122,7 +118,7 @@ public class AntiMoneyLaunderingAMLEnforcementController {
         }
     }
 
-    // ================= VALIDATION =================
+
 
     private boolean isValidInput() {
 
@@ -151,7 +147,7 @@ public class AntiMoneyLaunderingAMLEnforcementController {
         return true;
     }
 
-    // ================= UTIL =================
+
 
     private void clearFields() {
         accountField.clear();

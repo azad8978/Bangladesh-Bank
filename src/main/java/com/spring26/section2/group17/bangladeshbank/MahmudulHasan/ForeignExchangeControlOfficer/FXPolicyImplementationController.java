@@ -40,28 +40,28 @@ public class FXPolicyImplementationController {
     @FXML
     public void initialize() {
 
-        // Bind table columns
+
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         policyTable.setItems(policyList);
 
-        // Button actions
+
         btnOpenPanel.setOnAction(e -> handleOpenPanel());
         btnValidate.setOnAction(e -> handleValidate());
         btnPublish.setOnAction(e -> handlePublish());
         btnArchive.setOnAction(e -> handleArchive());
     }
 
-    // Event 1
+
     private void handleOpenPanel() {
         clearFields();
         validationLabel.setText("Panel Opened");
         publishStatusLabel.setText("Not Published");
     }
 
-    // Event 3
+
     private void handleValidate() {
         if (policyIdField.getText().isEmpty() ||
                 policyTitleField.getText().isEmpty() ||
@@ -73,7 +73,7 @@ public class FXPolicyImplementationController {
         }
     }
 
-    // Event 4
+
     private void handlePublish() {
 
         if (!validationLabel.getText().contains("Valid")) {
@@ -93,7 +93,7 @@ public class FXPolicyImplementationController {
         clearFields();
     }
 
-    // Event 5
+
     private void handleArchive() {
 
         Policy selected = policyTable.getSelectionModel().getSelectedItem();

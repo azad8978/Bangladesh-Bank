@@ -9,7 +9,7 @@ import javafx.scene.control.*;
 
 public class SupervisionofAuthorizedDealerADBanksController {
 
-    // ================= UI =================
+
 
     @FXML private TextField bankNameField;
     @FXML private TextField licenseField;
@@ -32,13 +32,13 @@ public class SupervisionofAuthorizedDealerADBanksController {
     @FXML private Button btnSubmit;
     @FXML private Button btnVerify;
 
-    // ================= DATA =================
+
 
     private ObservableList<ADBankRecord> records = FXCollections.observableArrayList();
 
     private String currentStatus = "Pending";
 
-    // ================= INITIALIZE =================
+
 
     @FXML
     public void initialize() {
@@ -53,7 +53,7 @@ public class SupervisionofAuthorizedDealerADBanksController {
         statusLabel.setText("Pending");
     }
 
-    // ================= EVENT 1 =================
+
 
     @FXML
     private void handleOpenPortal() {
@@ -61,7 +61,7 @@ public class SupervisionofAuthorizedDealerADBanksController {
         statusLabel.setText("Module Active");
     }
 
-    // ================= EVENT 2 =================
+
 
     @FXML
     private void handleSubmit() {
@@ -72,7 +72,7 @@ public class SupervisionofAuthorizedDealerADBanksController {
         statusLabel.setText("Data Submitted");
     }
 
-    // ================= EVENT 3 =================
+
 
     @FXML
     private void handleVerify() {
@@ -81,7 +81,7 @@ public class SupervisionofAuthorizedDealerADBanksController {
 
         double volume = Double.parseDouble(transactionVolumeField.getText());
 
-        // COMPLIANCE LOGIC
+
         if (licenseCheck.isSelected() && regulationCheck.isSelected()) {
             currentStatus = "Compliant ✔";
         } else if (licenseCheck.isSelected() || regulationCheck.isSelected()) {
@@ -90,14 +90,14 @@ public class SupervisionofAuthorizedDealerADBanksController {
             currentStatus = "Non-Compliant ❌";
         }
 
-        // HIGH VOLUME FLAG
+
         if (volume > 1000000) {
             currentStatus += " | High Volume 🔍";
         }
 
         statusLabel.setText(currentStatus);
 
-        // SAVE RECORD
+
         records.add(new ADBankRecord(
                 bankNameField.getText(),
                 licenseField.getText(),
@@ -108,7 +108,7 @@ public class SupervisionofAuthorizedDealerADBanksController {
         clearFields();
     }
 
-    // ================= VALIDATION =================
+
 
     private boolean isValidInput() {
 
@@ -136,7 +136,7 @@ public class SupervisionofAuthorizedDealerADBanksController {
         return true;
     }
 
-    // ================= UTIL =================
+
 
     private void clearFields() {
         bankNameField.clear();

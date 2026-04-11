@@ -8,7 +8,7 @@ import javafx.scene.control.*;
 
 public class MonitoringCrossBorderTradePaymentsController {
 
-    // ================= UI =================
+
 
     @FXML private Label statusLabel;
 
@@ -33,11 +33,10 @@ public class MonitoringCrossBorderTradePaymentsController {
     @FXML private TableColumn<TradeRecord, String> colImporter;
     @FXML private TableColumn<TradeRecord, String> colStatus;
 
-    // ================= DATA =================
 
     private ObservableList<TradeRecord> records = FXCollections.observableArrayList();
 
-    // ================= INITIALIZE =================
+
 
     @FXML
     public void initialize() {
@@ -53,7 +52,7 @@ public class MonitoringCrossBorderTradePaymentsController {
         statusLabel.setText("System Ready...");
     }
 
-    // ================= EVENT 1 =================
+
 
     @FXML
     private void handleEnterPortal() {
@@ -61,7 +60,7 @@ public class MonitoringCrossBorderTradePaymentsController {
         statusLabel.setText("Portal Accessed");
     }
 
-    // ================= EVENT 2 =================
+
 
     @FXML
     private void handleSubmit() {
@@ -72,7 +71,7 @@ public class MonitoringCrossBorderTradePaymentsController {
         statusLabel.setText("Data Submitted");
     }
 
-    // ================= EVENT 3 =================
+
 
     @FXML
     private void handleVerify() {
@@ -97,7 +96,7 @@ public class MonitoringCrossBorderTradePaymentsController {
         clearFields();
     }
 
-    // ================= VALIDATION =================
+
 
     private boolean isInputValid() {
 
@@ -127,7 +126,7 @@ public class MonitoringCrossBorderTradePaymentsController {
         return true;
     }
 
-    // ================= UTIL =================
+
 
     private void clearFields() {
         lcField.clear();

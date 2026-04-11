@@ -52,13 +52,13 @@ public class RemittanceFlowRegulationController {
         btnVerify.setOnAction(e -> verifySource());
     }
 
-    // EVENT 1
+
     private void openPortal() {
         statusLabel.setText("Portal Active");
         statusBarProgress.setProgress(0.2);
     }
 
-    // EVENT 3
+
     private void verifySource() {
 
         if (sourceCheck.isSelected()) {
@@ -72,7 +72,7 @@ public class RemittanceFlowRegulationController {
         }
     }
 
-    // EVENT 2 + 4
+
     private void submitData() {
 
         if (senderField.getText().isEmpty() ||

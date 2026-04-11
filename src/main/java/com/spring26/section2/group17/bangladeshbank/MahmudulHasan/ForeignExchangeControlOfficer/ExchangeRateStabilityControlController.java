@@ -9,7 +9,7 @@ import javafx.scene.control.*;
 
 public class ExchangeRateStabilityControlController {
 
-    // ================= UI =================
+
 
     @FXML private TextField bankField;
     @FXML private ComboBox<String> currencyBox;
@@ -33,14 +33,14 @@ public class ExchangeRateStabilityControlController {
     @FXML private Button btnSubmitFX;
     @FXML private Button btnAnalyze;
 
-    // ================= DATA =================
+
 
     private ObservableList<FXRecord> records = FXCollections.observableArrayList();
 
     private double lastVolatility = 0;
     private double lastDeviation = 0;
 
-    // ================= INITIALIZE =================
+
 
     @FXML
     public void initialize() {
@@ -58,14 +58,13 @@ public class ExchangeRateStabilityControlController {
         stabilityBar.setProgress(0);
     }
 
-    // ================= EVENT 1 =================
 
     @FXML
     private void handleOpenModule() {
         showAlert("Module Opened", "FX Control Panel Activated");
     }
 
-    // ================= EVENT 2 =================
+
 
     @FXML
     private void handleSubmitFX() {
@@ -75,7 +74,7 @@ public class ExchangeRateStabilityControlController {
         showAlert("Submitted", "FX Data Captured Successfully");
     }
 
-    // ================= EVENT 3 =================
+
 
     @FXML
     private void handleAnalyze() {
@@ -85,7 +84,7 @@ public class ExchangeRateStabilityControlController {
         double buy = Double.parseDouble(buyRateField.getText());
         double sell = Double.parseDouble(sellRateField.getText());
 
-        // CORE CALCULATION
+
         lastVolatility = Math.abs(sell - buy);
         lastDeviation = lastVolatility / buy;
 
@@ -94,7 +93,7 @@ public class ExchangeRateStabilityControlController {
 
         updateStabilityBar();
 
-        // SAVE DATA
+
         records.add(new FXRecord(
                 bankField.getText(),
                 currencyBox.getValue(),
@@ -106,7 +105,6 @@ public class ExchangeRateStabilityControlController {
         clearFields();
     }
 
-    // ================= STABILITY ENGINE =================
 
     private void updateStabilityBar() {
 
@@ -119,7 +117,7 @@ public class ExchangeRateStabilityControlController {
         }
     }
 
-    // ================= VALIDATION =================
+
 
     private boolean isValidInput() {
 
@@ -150,7 +148,7 @@ public class ExchangeRateStabilityControlController {
         return true;
     }
 
-    // ================= UTIL =================
+
 
     private void clearFields() {
         bankField.clear();

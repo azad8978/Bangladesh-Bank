@@ -12,7 +12,6 @@ import java.util.Random;
 
 public class FXDataIntelligenceReportingController {
 
-    // UI
     @FXML private Button btnLaunch;
     @FXML private Button btnRun;
 
@@ -63,12 +62,12 @@ public class FXDataIntelligenceReportingController {
         btnRun.setOnAction(e -> runAnalysis());
     }
 
-    // EVENT 1
+
     private void launchDashboard() {
         reportArea.setText("FX Intelligence Dashboard Activated...\nSystems Online ✔");
     }
 
-    // EVENT 2 + 3 + 4 + 5 (Core Brain)
+
     private void runAnalysis() {
 
         if (datasetBox.getValue() == null || startDate.getValue() == null || endDate.getValue() == null) {
@@ -83,7 +82,7 @@ public class FXDataIntelligenceReportingController {
             return;
         }
 
-        // SIMULATED FX INTELLIGENCE
+
         double avgRate = 100 + random.nextDouble() * 20;
 
         String risk;
@@ -102,12 +101,12 @@ public class FXDataIntelligenceReportingController {
             trend = "Falling 📉";
         }
 
-        // UI UPDATE
+
         avgRateLabel.setText(String.format("%.2f", avgRate));
         riskLabel.setText(risk);
         trendLabel.setText(trend);
 
-        // REPORT GENERATION
+
         String report = """
                 FX INTELLIGENCE REPORT
                 ----------------------
@@ -133,7 +132,7 @@ public class FXDataIntelligenceReportingController {
 
         reportArea.setText(report);
 
-        // ARCHIVE LOG
+
         archiveData.add(new FXArchiveRecord(
                 datasetBox.getValue(),
                 startDate.getValue() + " → " + endDate.getValue(),
