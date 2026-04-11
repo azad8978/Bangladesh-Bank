@@ -11,7 +11,7 @@ public class ReviewSystemLogsController
     @javafx.fxml.FXML
     private TextArea statusArea;
     @javafx.fxml.FXML
-    private ComboBox logTypeComboBox;
+    private ComboBox<String> logTypeComboBox;
     @javafx.fxml.FXML
     private DatePicker datePicker;
     @javafx.fxml.FXML

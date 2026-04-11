@@ -84,7 +84,7 @@ public class InvestigateSuspiciousActivitiesController {
 
         logsTable.setItems(logList);
 
-        // ComboBox data
+
         categoryComboBox.getItems().addAll(
                 "Network",
                 "Application",

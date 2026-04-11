@@ -16,7 +16,7 @@ public class ExportAnalyticalOutputsController
     @javafx.fxml.FXML
     private RadioButton csvRadio;
     @javafx.fxml.FXML
-    private ComboBox resultComboBox;
+    private ComboBox<String> resultComboBox;
     @javafx.fxml.FXML
     private RadioButton pdfRadio;
 
