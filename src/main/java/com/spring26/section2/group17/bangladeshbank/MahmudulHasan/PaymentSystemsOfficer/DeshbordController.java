@@ -35,7 +35,7 @@ public class DeshbordController {
         }
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void EnsureRegulatoryCompliance(ActionEvent actionEvent) {
         try {
             SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/Anti-MoneyLaundering(AML)Enforcement.fxml");
@@ -62,7 +62,7 @@ public class DeshbordController {
         }
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void MonitorFraudRisk(ActionEvent actionEvent) {
         try {
             SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/FXPolicyImplementation.fxml");

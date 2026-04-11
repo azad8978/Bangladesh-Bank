@@ -48,4 +48,25 @@ public class DashboardController
             e.printStackTrace();
         }
     }
+
+
+    @javafx.fxml.FXML
+    public void button5_oa(ActionEvent actionEvent) {
+        try{
+            SceneSwitcher.switchTo("MahmudulHasan/ForeignExchangeControlOfficer/Deshbord.fxml");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void button6_oa(ActionEvent actionEvent) {
+        try{
+            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/Deshbord.fxml");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
