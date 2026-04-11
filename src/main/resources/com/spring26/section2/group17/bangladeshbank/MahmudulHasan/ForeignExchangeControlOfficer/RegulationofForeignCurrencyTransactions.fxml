@@ -33,16 +33,16 @@
 
                 <Label text="Purpose:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                 <TextField fx:id="purposeField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <columnConstraints>
-               <ColumnConstraints />
-               <ColumnConstraints />
-            </columnConstraints>
-            <rowConstraints>
-               <RowConstraints />
-               <RowConstraints />
-               <RowConstraints />
-               <RowConstraints />
-            </rowConstraints>
+                <columnConstraints>
+                    <ColumnConstraints />
+                    <ColumnConstraints />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                </rowConstraints>
 
             </GridPane>
 

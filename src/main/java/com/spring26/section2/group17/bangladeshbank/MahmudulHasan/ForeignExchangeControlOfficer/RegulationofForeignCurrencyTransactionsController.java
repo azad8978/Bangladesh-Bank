@@ -12,28 +12,18 @@ public class RegulationofForeignCurrencyTransactionsController {
 
     // ================= UI COMPONENTS =================
 
-    @FXML
-    private TextField senderField;
-    @FXML
-    private TextField receiverField;
-    @FXML
-    private TextField amountField;
-    @FXML
-    private TextField purposeField;
+    @FXML private TextField senderField;
+    @FXML private TextField receiverField;
+    @FXML private TextField amountField;
+    @FXML private TextField purposeField;
 
-    @FXML
-    private TableView<Transaction> transactionTable;
+    @FXML private TableView<Transaction> transactionTable;
 
-    @FXML
-    private TableColumn<Transaction, String> colSender;
-    @FXML
-    private TableColumn<Transaction, String> colReceiver;
-    @FXML
-    private TableColumn<Transaction, Double> colAmount;
-    @FXML
-    private TableColumn<Transaction, String> colPurpose;
-    @FXML
-    private TableColumn<Transaction, String> colStatus;
+    @FXML private TableColumn<Transaction, String> colSender;
+    @FXML private TableColumn<Transaction, String> colReceiver;
+    @FXML private TableColumn<Transaction, Double> colAmount;
+    @FXML private TableColumn<Transaction, String> colPurpose;
+    @FXML private TableColumn<Transaction, String> colStatus;
 
     // ================= DATA STORAGE =================
 
