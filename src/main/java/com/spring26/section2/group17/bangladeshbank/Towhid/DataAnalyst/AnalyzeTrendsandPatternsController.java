@@ -13,7 +13,7 @@ public class AnalyzeTrendsandPatternsController
     @javafx.fxml.FXML
     private DatePicker endDatePicker;
     @javafx.fxml.FXML
-    private ComboBox datasetComboBox;
+    private ComboBox<String> datasetComboBox;
     @javafx.fxml.FXML
     private DatePicker startDatePicker;
     @javafx.fxml.FXML

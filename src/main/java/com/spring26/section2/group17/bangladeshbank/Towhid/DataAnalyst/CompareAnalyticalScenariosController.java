@@ -22,7 +22,7 @@ public class CompareAnalyticalScenariosController
     @javafx.fxml.FXML
     private DatePicker endDate1;
     @javafx.fxml.FXML
-    private ComboBox dataset2ComboBox;
+    private ComboBox<String> dataset2ComboBox;
     @javafx.fxml.FXML
     private DatePicker endDate2;
     @javafx.fxml.FXML

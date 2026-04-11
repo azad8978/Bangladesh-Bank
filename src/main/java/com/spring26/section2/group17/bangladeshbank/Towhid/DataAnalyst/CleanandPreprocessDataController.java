@@ -17,7 +17,7 @@ public class CleanandPreprocessDataController
     @javafx.fxml.FXML
     private CheckBox removeNullCheckBox;
     @javafx.fxml.FXML
-    private ComboBox methodComboBox;
+    private ComboBox<String> methodComboBox;
     @javafx.fxml.FXML
     private CheckBox normalizeCheckBox;
     @javafx.fxml.FXML

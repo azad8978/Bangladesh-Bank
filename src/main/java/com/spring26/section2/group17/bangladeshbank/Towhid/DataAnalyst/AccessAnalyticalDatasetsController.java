@@ -13,7 +13,7 @@ public class AccessAnalyticalDatasetsController
     @javafx.fxml.FXML
     private TableColumn nameColumn;
     @javafx.fxml.FXML
-    private ComboBox typeComboBox;
+    private ComboBox<String> typeComboBox;
     @javafx.fxml.FXML
     private TextArea previewArea;
     @javafx.fxml.FXML

@@ -37,9 +37,7 @@ public class MonitorSystemSecurityStatusController {
     @FXML
     private ToggleGroup timeGroup;
 
-    // =========================
-    // 🔐 DUMMY DATA (ARRAYLIST)
-    // =========================
+
     private final List<String> todayThreats = new ArrayList<>();
     private final List<String> weekThreats = new ArrayList<>();
     private final List<String> monthThreats = new ArrayList<>();
@@ -66,22 +64,16 @@ public class MonitorSystemSecurityStatusController {
                 "Critical"
         );
 
-        // =========================
-        // 🔐 DUMMY SECURITY DATA
-        // =========================
-
-        // TODAY DATA
         todayThreats.add("Login attempt failed - IP 192.168.1.10");
         todayThreats.add("Suspicious file access blocked");
         todayThreats.add("Firewall auto-block triggered");
 
-        // WEEK DATA
         weekThreats.add("Multiple failed logins detected");
         weekThreats.add("Unusual admin access request");
         weekThreats.add("Malware scan triggered on server-2");
         weekThreats.add("Port scanning attempt blocked");
 
-        // MONTH DATA
+
         monthThreats.add("DDoS attempt mitigated");
         monthThreats.add("Phishing email detected in system");
         monthThreats.add("Database access anomaly detected");
@@ -110,9 +102,7 @@ public class MonitorSystemSecurityStatusController {
         String alerts;
         String health;
 
-        // =========================
-        // RANGE SELECTION LOGIC
-        // =========================
+
         if (todayRadio.isSelected()) {
             selectedData = todayThreats;
             range = "Today";
@@ -172,16 +162,11 @@ public class MonitorSystemSecurityStatusController {
             return;
         }
 
-        // =========================
-        // UPDATE UI FIELDS
-        // =========================
         threatLevelField.setText(threatLevel);
         alertsField.setText(alerts);
         healthComboBox.setValue(health);
 
-        // =========================
-        // DASHBOARD OUTPUT
-        // =========================
+
         StringBuilder sb = new StringBuilder();
 
         sb.append("🔐 SECURITY DASHBOARD REPORT\n");
