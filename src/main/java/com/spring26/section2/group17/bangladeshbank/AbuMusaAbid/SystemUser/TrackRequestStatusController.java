@@ -1,5 +1,6 @@
 package com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.SystemUser;
 
+import com.spring26.section2.group17.bangladeshbank.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -26,5 +27,11 @@ public class TrackRequestStatusController
 
     @javafx.fxml.FXML
     public void BackButton(ActionEvent actionEvent) {
+        try {
+            SceneSwitcher.switchTo("AbuMusaAbid/SystemUser/Deshbord.fxml");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
