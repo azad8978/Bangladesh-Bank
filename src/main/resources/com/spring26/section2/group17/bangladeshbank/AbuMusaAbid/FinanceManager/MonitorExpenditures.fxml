@@ -37,6 +37,7 @@
     <TextField fx:id="budgetField" editable="false" layoutX="420.0" layoutY="375.0" prefWidth="150.0" />
 
     <!-- Flag Button -->
+
     <Button fx:id="flagButton" layoutX="30.0" layoutY="416.0" prefWidth="70.0" text="Flag" />
    <Button layoutX="565.0" layoutY="430.0" mnemonicParsing="false" onAction="#BackButton" text="Back" />
 
