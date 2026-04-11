@@ -20,22 +20,22 @@
             </children>
         </HBox>
 
-        <!-- LEFT WORKFLOW TRACKER -->
-        <VBox layoutX="0" layoutY="50" prefHeight="210.0" prefWidth="174.0" spacing="15" style="-fx-background-color: #EBF5FB; -fx-padding: 15;">
+<!--        &lt;!&ndash; LEFT WORKFLOW TRACKER &ndash;&gt;-->
+<!--        <VBox layoutX="0" layoutY="50" prefHeight="210.0" prefWidth="174.0" spacing="15" style="-fx-background-color: #EBF5FB; -fx-padding: 15;">-->
 
-            <children>
-                <Label style="-fx-font-weight: bold;" text="Workflow" />
+<!--            <children>-->
+<!--                <Label style="-fx-font-weight: bold;" text="Workflow" />-->
 
-                <Label text="1. Access System" />
-                <Label text="2. Input Data" />
-                <Label text="3. Risk Analysis" />
-                <Label text="4. Alert" />
-                <Label text="5. Case Log" />
-            </children>
-        </VBox>
+<!--                <Label text="1. Access System" />-->
+<!--                <Label text="2. Input Data" />-->
+<!--                <Label text="3. Risk Analysis" />-->
+<!--                <Label text="4. Alert" />-->
+<!--                <Label text="5. Case Log" />-->
+<!--            </children>-->
+<!--        </VBox>-->
 
         <!-- CARD 1: ACCESS SYSTEM -->
-        <VBox layoutX="170.0" layoutY="50.0" prefHeight="70" prefWidth="400" spacing="10" style="-fx-background-color: white; -fx-padding: 10; -fx-border-color: #D5D8DC;">
+        <VBox layoutX="33.0" layoutY="50.0" prefHeight="75.0" prefWidth="537.0" spacing="10" style="-fx-background-color: white; -fx-padding: 10; -fx-border-color: #D5D8DC;">
 
             <children>
                 <Label style="-fx-font-weight: bold;" text="Access AML Monitoring System" />
@@ -44,7 +44,7 @@
         </VBox>
 
         <!-- CARD 2: INPUT DATA -->
-        <VBox layoutX="170.0" layoutY="124.0" prefHeight="160" prefWidth="400" spacing="10" style="-fx-background-color: white; -fx-padding: 10; -fx-border-color: #D5D8DC;">
+        <VBox layoutX="33.0" layoutY="124.0" prefHeight="219.0" prefWidth="537.0" spacing="10" style="-fx-background-color: white; -fx-padding: 10; -fx-border-color: #D5D8DC;">
 
             <children>
                 <Label style="-fx-font-weight: bold;" text="Suspicious Transaction Input" />
@@ -59,7 +59,7 @@
         </VBox>
 
         <!-- CARD 3: RISK ANALYSIS -->
-        <VBox layoutX="170.0" layoutY="342.0" prefHeight="111.0" prefWidth="400" spacing="10" style="-fx-background-color: white; -fx-padding: 10; -fx-border-color: #D5D8DC;">
+        <VBox layoutX="33.0" layoutY="342.0" prefHeight="112.0" prefWidth="537.0" spacing="10" style="-fx-background-color: white; -fx-padding: 10; -fx-border-color: #D5D8DC;">
 
             <children>
                 <Label style="-fx-font-weight: bold;" text="Risk Analysis Engine" />
@@ -72,7 +72,7 @@
         </VBox>
 
         <!-- CARD 4: ALERT -->
-        <VBox layoutX="170.0" layoutY="453.0" prefHeight="100" prefWidth="400" spacing="10" style="-fx-background-color: #FDEDEC; -fx-padding: 10; -fx-border-color: #E74C3C;">
+        <VBox layoutX="33.0" layoutY="453.0" prefHeight="100" prefWidth="537.0" spacing="10" style="-fx-background-color: #FDEDEC; -fx-padding: 10; -fx-border-color: #E74C3C;">
 
             <children>
                 <Label style="-fx-font-weight: bold;" text="Investigation Alert" />
@@ -81,7 +81,7 @@
         </VBox>
 
         <!-- CARD 5: CASE LOG -->
-        <VBox layoutX="170.0" layoutY="553.0" prefHeight="140" prefWidth="400" spacing="10" style="-fx-background-color: white; -fx-padding: 10; -fx-border-color: #D5D8DC;">
+        <VBox layoutX="33.0" layoutY="553.0" prefHeight="140" prefWidth="537.0" spacing="10" style="-fx-background-color: white; -fx-padding: 10; -fx-border-color: #D5D8DC;">
 
             <children>
                 <Label style="-fx-font-weight: bold;" text="Case Log Records" />
