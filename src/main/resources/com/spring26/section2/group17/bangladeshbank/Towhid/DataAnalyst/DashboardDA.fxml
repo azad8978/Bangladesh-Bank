@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="499.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.DashboardDAController">
+   <children>
+      <Button layoutX="22.0" layoutY="13.0" mnemonicParsing="false" onAction="#LoginOA" style="-fx-background-color: yellow;" text="Back">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="225.0" layoutY="15.0" mnemonicParsing="false" onAction="#AccessOA" style="-fx-background-color: red;" text="Access Analytical Datasets" textFill="WHITE" />
+      <Button layoutX="225.0" layoutY="71.0" mnemonicParsing="false" onAction="#CleanOA" style="-fx-background-color: orange;" text=" Clean and Preprocess Data" textFill="WHITE" />
+      <Button layoutX="225.0" layoutY="133.0" mnemonicParsing="false" onAction="#GenerateOA" style="-fx-background-color: blue;" text="Generate Statistical Summaries" textFill="WHITE" />
+      <Button layoutX="230.0" layoutY="187.0" mnemonicParsing="false" onAction="#VisualizeOA" style="-fx-background-color: green;" text="Visualize Analytical Data" textFill="WHITE" />
+      <Button layoutX="232.0" layoutY="250.0" mnemonicParsing="false" onAction="#AnalyzeOA" style="-fx-background-color: yellow;" text="Analyze Trends and Patterns" textFill="#2e0101" />
+      <Button layoutX="232.0" layoutY="315.0" mnemonicParsing="false" onAction="#CompareOA" style="-fx-background-color: gray;" text="Compare Analytical Scenarios" />
+      <Button layoutX="230.0" layoutY="373.0" mnemonicParsing="false" onAction="#ExportOA" style="-fx-background-color: pink;" text="Export Analytical Outputs" textFill="#0d0606" />
+      <Button layoutX="236.0" layoutY="436.0" mnemonicParsing="false" onAction="#MonitorOA" style="-fx-background-color: orange;" text=" Monitor Data Quality" textFill="WHITE" />
+   </children>
+</AnchorPane>

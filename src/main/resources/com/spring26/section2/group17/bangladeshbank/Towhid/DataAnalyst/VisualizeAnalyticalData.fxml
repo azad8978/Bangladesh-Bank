@@ -1,66 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.collections.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.VisualizeAnalyticalDataController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.VisualizeAnalyticalDataController">
 
     <!-- Title -->
-    <Label layoutX="20.0" layoutY="10.0"
-           text="Visualize Analytical Data"
-           style="-fx-font-size:18px; -fx-font-weight:bold;" />
+    <Label layoutX="20.0" layoutY="10.0" style="-fx-font-size:18px; -fx-font-weight:bold;" text="Visualize Analytical Data" />
 
     <!-- Visualization Button -->
-    <Button fx:id="visualizeButton"
-            layoutX="450.0" layoutY="10.0"
-            text="Visualization"
-            prefWidth="120"/>
+    <Button fx:id="visualizeButton" layoutX="450.0" layoutY="10.0" prefWidth="120" text="Visualization" />
 
     <!-- Chart Type Selection -->
-    <Label layoutX="20.0" layoutY="50.0"
-           text="Select Chart Type:" style="-fx-font-weight:bold;" />
+    <Label layoutX="20.0" layoutY="50.0" style="-fx-font-weight:bold;" text="Select Chart Type:" />
 
     <VBox layoutX="20.0" layoutY="80.0" spacing="10">
-        <RadioButton fx:id="barChartRadio" text="Bar Chart" toggleGroup="$chartGroup"/>
-        <RadioButton fx:id="lineChartRadio" text="Line Chart" toggleGroup="$chartGroup"/>
-        <RadioButton fx:id="pieChartRadio" text="Pie Chart" toggleGroup="$chartGroup"/>
+        <RadioButton fx:id="barChartRadio" text="Bar Chart">
+         <toggleGroup>
+            <ToggleGroup fx:id="chartGroup" />
+         </toggleGroup></RadioButton>
+        <RadioButton fx:id="lineChartRadio" text="Line Chart" toggleGroup="$chartGroup" />
+        <RadioButton fx:id="pieChartRadio" text="Pie Chart" toggleGroup="$chartGroup" />
     </VBox>
 
     <!-- Dataset Selection -->
     <Label layoutX="200.0" layoutY="50.0" text="Select Dataset:" />
-    <ComboBox fx:id="datasetComboBox"
-              layoutX="200.0" layoutY="70.0"
-              prefWidth="180">
+    <ComboBox fx:id="datasetComboBox" layoutX="200.0" layoutY="70.0" prefWidth="180">
         <items>
             <FXCollections fx:factory="observableArrayList">
-                <String fx:value="Sales Data"/>
-                <String fx:value="User Activity"/>
-                <String fx:value="Transaction Data"/>
+                <String fx:value="Sales Data" />
+                <String fx:value="User Activity" />
+                <String fx:value="Transaction Data" />
             </FXCollections>
         </items>
     </ComboBox>
 
     <!-- Chart Display Area -->
-    <Label layoutX="20.0" layoutY="160.0"
-           text="Chart Output:" style="-fx-font-weight:bold;" />
+    <Label layoutX="20.0" layoutY="160.0" style="-fx-font-weight:bold;" text="Chart Output:" />
 
-    <Pane fx:id="chartPane"
-          layoutX="20.0" layoutY="180.0"
-          prefWidth="560.0" prefHeight="180.0"
-          style="-fx-border-color: black;" />
+    <Pane fx:id="chartPane" layoutX="20.0" layoutY="180.0" prefHeight="180.0" prefWidth="560.0" style="-fx-border-color: black;" />
 
     <!-- Render Button -->
-    <Button fx:id="renderButton"
-            layoutX="450.0" layoutY="370.0"
-            text="Render Chart"
-            prefWidth="120"/>
+    <Button fx:id="renderButton" layoutX="450.0" layoutY="370.0" prefWidth="120" text="Render Chart" />
+   <Button layoutX="450.0" layoutY="70.0" mnemonicParsing="false" onAction="#ButtonOA" text="BackButton" />
 
 </AnchorPane>

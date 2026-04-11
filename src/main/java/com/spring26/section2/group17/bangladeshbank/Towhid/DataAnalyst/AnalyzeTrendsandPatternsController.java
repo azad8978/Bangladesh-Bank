@@ -1,5 +1,7 @@
 package com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst;
 
+import com.spring26.section2.group17.bangladeshbank.SceneSwitcher;
+import javafx.event.ActionEvent;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -23,4 +25,15 @@ public class AnalyzeTrendsandPatternsController
 
     @javafx.fxml.FXML
     public void initialize() {
-    }}
+    }
+
+    @javafx.fxml.FXML
+    public void ButtonOA(ActionEvent actionEvent) {
+        try{
+            SceneSwitcher.switchTo("Towhid/DataAnalyst/DashboardDA.fxml");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}

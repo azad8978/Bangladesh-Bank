@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.CompareAnalyticalScenariosController"
-            prefHeight="600.0" prefWidth="900.0">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.CompareAnalyticalScenariosController">
 
     <children>
 
         <!-- Title -->
-        <Label layoutX="300.0" layoutY="20.0" text="Compare Analytical Scenarios"
-               style="-fx-font-size:18px; -fx-font-weight:bold;" />
+        <Label layoutX="300.0" layoutY="20.0" style="-fx-font-size:18px; -fx-font-weight:bold;" text="Compare Analytical Scenarios" />
 
         <!-- Scenario 1 -->
         <Label layoutX="50.0" layoutY="80.0" text="Scenario 1 Dataset:" />
@@ -39,22 +40,13 @@
         <DatePicker fx:id="endDate2" layoutX="620.0" layoutY="155.0" />
 
         <!-- Compare Button -->
-        <Button fx:id="compareButton"
-                layoutX="380.0"
-                layoutY="210.0"
-                text="Compare"
-                prefWidth="150.0" />
+        <Button fx:id="compareButton" layoutX="380.0" layoutY="210.0" prefWidth="150.0" text="Compare" />
 
         <!-- Result Label -->
-        <Label layoutX="50.0" layoutY="260.0" text="Comparison Results:"
-               style="-fx-font-size:14px; -fx-font-weight:bold;" />
+        <Label layoutX="50.0" layoutY="260.0" style="-fx-font-size:14px; -fx-font-weight:bold;" text="Comparison Results:" />
 
         <!-- Chart -->
-        <BarChart fx:id="comparisonChart"
-                  layoutX="50.0"
-                  layoutY="290.0"
-                  prefHeight="200.0"
-                  prefWidth="500.0">
+        <BarChart fx:id="comparisonChart" layoutX="50.0" layoutY="290.0" prefHeight="200.0" prefWidth="500.0">
 
             <xAxis>
                 <CategoryAxis label="Scenario" />
@@ -65,26 +57,19 @@
         </BarChart>
 
         <!-- Table -->
-        <TableView fx:id="comparisonTable"
-                   layoutX="580.0"
-                   layoutY="290.0"
-                   prefHeight="200.0"
-                   prefWidth="300.0">
+        <TableView fx:id="comparisonTable" layoutX="580.0" layoutY="290.0" prefHeight="200.0" prefWidth="300.0">
 
             <columns>
-                <TableColumn text="Metric" prefWidth="150.0" />
-                <TableColumn text="Scenario 1" prefWidth="75.0" />
-                <TableColumn text="Scenario 2" prefWidth="75.0" />
+                <TableColumn prefWidth="150.0" text="Metric" />
+                <TableColumn prefWidth="75.0" text="Scenario 1" />
+                <TableColumn prefWidth="75.0" text="Scenario 2" />
             </columns>
         </TableView>
 
         <!-- Summary Text -->
         <Label layoutX="50.0" layoutY="510.0" text="Summary:" />
-        <TextArea fx:id="summaryArea"
-                  layoutX="120.0"
-                  layoutY="500.0"
-                  prefWidth="760.0"
-                  prefHeight="70.0" />
+        <TextArea fx:id="summaryArea" layoutX="120.0" layoutY="500.0" prefHeight="70.0" prefWidth="760.0" />
+      <Button layoutX="605.0" layoutY="210.0" mnemonicParsing="false" onAction="#ButtonOA" prefHeight="26.0" prefWidth="102.0" text="BackButton" />
 
     </children>
 

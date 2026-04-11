@@ -1,89 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.collections.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.CyberSecurityOfficer.ReviewSecurityAlertsController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.CyberSecurityOfficer.ReviewSecurityAlertsController">
 
     <!-- Title -->
-    <Label layoutX="20.0" layoutY="10.0"
-           text="Review Security Alerts"
-           style="-fx-font-size:18px; -fx-font-weight:bold;" />
+    <Label layoutX="20.0" layoutY="10.0" style="-fx-font-size:18px; -fx-font-weight:bold;" text="Review Security Alerts" />
 
     <!-- Alerts Table -->
     <Label layoutX="20.0" layoutY="40.0" text="Security Alerts:" />
-    <TableView fx:id="alertsTable"
-               layoutX="20.0" layoutY="60.0"
-               prefHeight="140.0" prefWidth="560.0">
+    <TableView fx:id="alertsTable" layoutX="20.0" layoutY="60.0" prefHeight="140.0" prefWidth="560.0">
 
         <columns>
-            <TableColumn fx:id="alertIdColumn" text="Alert ID" prefWidth="120"/>
-            <TableColumn fx:id="typeColumn" text="Alert Type" prefWidth="150"/>
-            <TableColumn fx:id="severityColumn" text="Severity" prefWidth="120"/>
-            <TableColumn fx:id="timeColumn" text="Timestamp" prefWidth="170"/>
+            <TableColumn fx:id="alertIdColumn" prefWidth="120" text="Alert ID" />
+            <TableColumn fx:id="typeColumn" prefWidth="150" text="Alert Type" />
+            <TableColumn fx:id="severityColumn" prefWidth="120" text="Severity" />
+            <TableColumn fx:id="timeColumn" prefWidth="170" text="Timestamp" />
         </columns>
     </TableView>
 
     <!-- View Details Button -->
-    <Button fx:id="viewButton"
-            layoutX="450.0" layoutY="210.0"
-            text="View Details"
-            prefWidth="130"/>
+    <Button layoutX="450.0" layoutY="210.0" onAction="#viewdetails" prefWidth="130" text="View Details" />
 
     <!-- Alert Details Section -->
-    <Label layoutX="20.0" layoutY="240.0"
-           text="Alert Details:" style="-fx-font-weight:bold;" />
+    <Label layoutX="20.0" layoutY="240.0" style="-fx-font-weight:bold;" text="Alert Details:" />
 
-    <GridPane layoutX="20.0" layoutY="260.0" hgap="10" vgap="10">
+    <GridPane hgap="10" layoutX="20.0" layoutY="260.0" vgap="10">
 
         <!-- Alert ID -->
-        <Label text="Alert ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-        <TextField fx:id="alertIdField"
-                   promptText="Selected alert ID"
-                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label text="Alert ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="alertIdField" promptText="Selected alert ID" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
         <!-- Alert Type -->
-        <Label text="Type:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-        <TextField fx:id="alertTypeField"
-                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Label text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="alertTypeField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
         <!-- Severity -->
-        <Label text="Severity:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-        <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="1">
-            <RadioButton fx:id="lowRadio" text="Low" toggleGroup="$severityGroup"/>
-            <RadioButton fx:id="mediumRadio" text="Medium" toggleGroup="$severityGroup"/>
-            <RadioButton fx:id="highRadio" text="High" toggleGroup="$severityGroup"/>
+        <Label text="Severity:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <RadioButton fx:id="lowRadio" text="Low">
+            <toggleGroup>
+               <ToggleGroup fx:id="severityGroup" />
+            </toggleGroup></RadioButton>
+            <RadioButton fx:id="mediumRadio" text="Medium" toggleGroup="$severityGroup" />
+            <RadioButton fx:id="highRadio" text="High" toggleGroup="$severityGroup" />
         </HBox>
 
         <!-- Timestamp -->
-        <Label text="Timestamp:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-        <TextField fx:id="timestampField"
-                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <Label text="Timestamp:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="timestampField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
         <!-- Notes -->
-        <Label text="Notes:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-        <TextArea fx:id="notesArea"
-                  promptText="Write review notes..."
-                  prefRowCount="3"
-                  GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        <Label text="Notes:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextArea fx:id="notesArea" prefRowCount="3" promptText="Write review notes..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
     </GridPane>
 
     <!-- Action Buttons -->
-    <Button fx:id="reviewButton"
-            layoutX="350.0" layoutY="360.0"
-            text="Mark as Reviewed"
-            prefWidth="150"/>
+    <Button layoutX="350.0" layoutY="360.0" onAction="#markasreview" prefWidth="150" text="Mark as Reviewed" />
 
-    <Button fx:id="clearButton"
-            layoutX="510.0" layoutY="360.0"
-            text="Clear"
-            prefWidth="70"/>
+    <Button layoutX="510.0" layoutY="360.0" onAction="#clear" prefWidth="70" text="Clear" />
+   <Button layoutX="274.0" layoutY="210.0" mnemonicParsing="false" onAction="#ButtonOA" text="BackButton" />
 
 </AnchorPane>

@@ -1,70 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.MonitorDataQualityController"
-            prefHeight="550.0" prefWidth="850.0">
+<AnchorPane prefHeight="550.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.DataAnalyst.MonitorDataQualityController">
 
     <children>
 
         <!-- Title -->
-        <Label layoutX="280.0" layoutY="20.0"
-               text="Data Quality Check"
-               style="-fx-font-size:18px; -fx-font-weight:bold;" />
+        <Label layoutX="280.0" layoutY="20.0" style="-fx-font-size:18px; -fx-font-weight:bold;" text="Data Quality Check" />
 
         <!-- Step 1: Trigger Button -->
-        <Button fx:id="checkButton"
-                layoutX="350.0"
-                layoutY="70.0"
-                text="Run Data Quality Check"
-                prefWidth="180.0" />
+        <Button fx:id="checkButton" layoutX="350.0" layoutY="70.0" prefWidth="180.0" text="Run Data Quality Check" />
 
         <!-- Step 3: Report Table -->
-        <Label layoutX="50.0" layoutY="130.0"
-               text="Data Quality Report:"
-               style="-fx-font-weight:bold;" />
+        <Label layoutX="50.0" layoutY="130.0" style="-fx-font-weight:bold;" text="Data Quality Report:" />
 
-        <TableView fx:id="qualityTable"
-                   layoutX="50.0"
-                   layoutY="160.0"
-                   prefWidth="750.0"
-                   prefHeight="180.0">
+        <TableView fx:id="qualityTable" layoutX="50.0" layoutY="160.0" prefHeight="180.0" prefWidth="750.0">
 
             <columns>
-                <TableColumn text="Issue Type" prefWidth="200.0" />
-                <TableColumn text="Description" prefWidth="300.0" />
-                <TableColumn text="Count" prefWidth="100.0" />
-                <TableColumn text="Status" prefWidth="150.0" />
+                <TableColumn prefWidth="200.0" text="Issue Type" />
+                <TableColumn prefWidth="300.0" text="Description" />
+                <TableColumn prefWidth="100.0" text="Count" />
+                <TableColumn prefWidth="150.0" text="Status" />
             </columns>
 
         </TableView>
 
         <!-- Step 3: Detailed Output -->
-        <Label layoutX="50.0" layoutY="360.0"
-               text="Details:"
-               style="-fx-font-weight:bold;" />
+        <Label layoutX="50.0" layoutY="360.0" style="-fx-font-weight:bold;" text="Details:" />
 
-        <TextArea fx:id="detailsArea"
-                  layoutX="50.0"
-                  layoutY="390.0"
-                  prefWidth="750.0"
-                  prefHeight="80.0"
-                  editable="false" />
+        <TextArea fx:id="detailsArea" editable="false" layoutX="50.0" layoutY="390.0" prefHeight="80.0" prefWidth="750.0" />
 
         <!-- Step 4: Confirmation -->
-        <CheckBox fx:id="confirmCheckBox"
-                  layoutX="50.0"
-                  layoutY="490.0"
-                  text="I have reviewed and confirm corrections" />
+        <CheckBox fx:id="confirmCheckBox" layoutX="50.0" layoutY="490.0" text="I have reviewed and confirm corrections" />
 
-        <Button fx:id="confirmButton"
-                layoutX="350.0"
-                layoutY="485.0"
-                text="Confirm"
-                prefWidth="120.0" />
+        <Button fx:id="confirmButton" layoutX="350.0" layoutY="485.0" prefWidth="120.0" text="Confirm" />
+      <Button layoutX="629.0" layoutY="70.0" mnemonicParsing="false" onAction="#ButtonOA" text="BackButton " />
 
     </children>
 

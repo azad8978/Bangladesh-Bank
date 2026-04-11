@@ -1,84 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.collections.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.CyberSecurityOfficer.ManageUserAccessViolationsController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.Towhid.CyberSecurityOfficer.ManageUserAccessViolationsController">
 
     <!-- Title -->
-    <Label layoutX="20.0" layoutY="10.0" text="Manage User Access Violations"
-           style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+    <Label layoutX="20.0" layoutY="10.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Manage User Access Violations" />
 
     <!-- Violations Table -->
     <Label layoutX="20.0" layoutY="40.0" text="Access Violations:" />
-    <TableView fx:id="violationTable" layoutX="20.0" layoutY="60.0"
-               prefHeight="140.0" prefWidth="560.0">
+    <TableView fx:id="violationTable" layoutX="20.0" layoutY="60.0" prefHeight="140.0" prefWidth="560.0">
 
         <columns>
-            <TableColumn fx:id="userIdColumn" text="User ID" prefWidth="180"/>
-            <TableColumn fx:id="violationTypeColumn" text="Violation Type" prefWidth="200"/>
-            <TableColumn fx:id="dateColumn" text="Date" prefWidth="180"/>
+            <TableColumn fx:id="userIdColumn" prefWidth="180" text="User ID" />
+            <TableColumn fx:id="violationTypeColumn" prefWidth="200" text="Violation Type" />
+            <TableColumn fx:id="dateColumn" prefWidth="180" text="Date" />
         </columns>
     </TableView>
 
     <!-- Restrict Button -->
-    <Button fx:id="restrictButton" layoutX="450.0" layoutY="210.0"
-            text="Restrict Access" prefWidth="130"/>
+    <Button layoutX="450.0" layoutY="210.0" onAction="#restrictaccess" prefWidth="130" text="Restrict Access" />
 
     <!-- Restriction Details Section -->
-    <Label layoutX="20.0" layoutY="240.0"
-           text="Restriction Details:" style="-fx-font-weight: bold;" />
+    <Label layoutX="20.0" layoutY="240.0" style="-fx-font-weight: bold;" text="Restriction Details:" />
 
-    <GridPane layoutX="20.0" layoutY="260.0" hgap="10" vgap="10">
+    <GridPane hgap="10" layoutX="20.0" layoutY="260.0" vgap="10">
 
         <!-- Selected User -->
-        <Label text="User ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-        <TextField fx:id="userIdField" promptText="Selected user ID"
-                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label text="User ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="userIdField" promptText="Selected user ID" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
         <!-- Restriction Type -->
-        <Label text="Restriction Type:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-        <HBox spacing="10" GridPane.rowIndex="1" GridPane.columnIndex="1">
-            <RadioButton fx:id="temporaryRadio" text="Temporary" toggleGroup="$restrictionGroup"/>
-            <RadioButton fx:id="permanentRadio" text="Permanent" toggleGroup="$restrictionGroup"/>
+        <Label text="Restriction Type:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <RadioButton fx:id="temporaryRadio" text="Temporary">
+            <toggleGroup>
+               <ToggleGroup fx:id="restrictionGroup" />
+            </toggleGroup></RadioButton>
+            <RadioButton fx:id="permanentRadio" text="Permanent" toggleGroup="$restrictionGroup" />
         </HBox>
 
         <!-- Duration -->
-        <Label text="Duration:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-        <ComboBox fx:id="durationComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1">
+        <Label text="Duration:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <ComboBox fx:id="durationComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
             <items>
                 <FXCollections fx:factory="observableArrayList">
-                    <String fx:value="1 Day"/>
-                    <String fx:value="7 Days"/>
-                    <String fx:value="30 Days"/>
-                    <String fx:value="Indefinite"/>
+                    <String fx:value="1 Day" />
+                    <String fx:value="7 Days" />
+                    <String fx:value="30 Days" />
+                    <String fx:value="Indefinite" />
                 </FXCollections>
             </items>
         </ComboBox>
 
         <!-- Officer Password -->
-        <Label text="Officer Password:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-        <PasswordField fx:id="passwordField" promptText="Enter password"
-                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <Label text="Officer Password:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <PasswordField fx:id="passwordField" promptText="Enter password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
         <!-- Notes -->
-        <Label text="Notes:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-        <TextArea fx:id="notesArea" promptText="Enter reason for restriction..."
-                  prefRowCount="3" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        <Label text="Notes:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextArea fx:id="notesArea" prefRowCount="3" promptText="Enter reason for restriction..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
     </GridPane>
 
     <!-- Action Buttons -->
-    <Button fx:id="applyButton" layoutX="350.0" layoutY="360.0"
-            text="Apply Restriction" prefWidth="120"/>
+    <Button layoutX="350.0" layoutY="360.0" onAction="#applyrestriction" prefWidth="120" text="Apply Restriction" />
 
-    <Button fx:id="clearButton" layoutX="480.0" layoutY="360.0"
-            text="Clear" prefWidth="100"/>
+    <Button layoutX="480.0" layoutY="360.0" onAction="#clear" prefWidth="100" text="Clear" />
+   <Button layoutX="311.0" layoutY="210.0" mnemonicParsing="false" onAction="#ButtonOA" text="BackButton" />
 
 </AnchorPane>
