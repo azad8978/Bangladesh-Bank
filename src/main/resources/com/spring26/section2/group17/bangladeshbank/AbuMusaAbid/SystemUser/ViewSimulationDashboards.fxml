@@ -1,53 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.SystemUser.ViewSimulationDashboardsController"
-            prefHeight="500.0" prefWidth="700.0">
+<AnchorPane prefHeight="565.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.SystemUser.ViewSimulationDashboardsController">
 
     <!-- Title -->
-    <Label layoutX="220.0" layoutY="10.0" text="Simulation Dashboard" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <Label layoutX="220.0" layoutY="10.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Simulation Dashboard" />
 
     <!-- Filters -->
-    <Label layoutX="50.0" layoutY="50.0" text="Time Period:"/>
-    <ComboBox fx:id="timePeriodCombo" layoutX="150.0" layoutY="45.0" prefWidth="150.0"/>
+    <Label layoutX="50.0" layoutY="50.0" text="Time Period:" />
+    <ComboBox fx:id="timePeriodCombo" layoutX="150.0" layoutY="45.0" prefWidth="150.0" />
 
-    <Label layoutX="320.0" layoutY="50.0" text="Scenario:"/>
-    <ComboBox fx:id="scenarioCombo" layoutX="400.0" layoutY="45.0" prefWidth="150.0"/>
+    <Label layoutX="320.0" layoutY="50.0" text="Scenario:" />
+    <ComboBox fx:id="scenarioCombo" layoutX="400.0" layoutY="45.0" prefWidth="150.0" />
 
-    <Button fx:id="applyButton" layoutX="570.0" layoutY="45.0" text="Apply" prefWidth="80.0"/>
+    <Button fx:id="applyButton" layoutX="570.0" layoutY="45.0" prefWidth="80.0" text="Apply" />
 
     <!-- Line Chart -->
-    <LineChart fx:id="lineChart" layoutX="50.0" layoutY="90.0" prefWidth="300.0" prefHeight="180.0">
+    <LineChart fx:id="lineChart" layoutX="50.0" layoutY="90.0" prefHeight="180.0" prefWidth="300.0">
         <xAxis>
-            <CategoryAxis label="Time"/>
+            <CategoryAxis label="Time" />
         </xAxis>
         <yAxis>
-            <NumberAxis label="Value"/>
+            <NumberAxis label="Value" />
         </yAxis>
     </LineChart>
 
     <!-- Bar Chart -->
-    <BarChart fx:id="barChart" layoutX="370.0" layoutY="90.0" prefWidth="300.0" prefHeight="180.0">
+    <BarChart fx:id="barChart" layoutX="370.0" layoutY="90.0" prefHeight="180.0" prefWidth="300.0">
         <xAxis>
-            <CategoryAxis label="Scenario"/>
+            <CategoryAxis label="Scenario" />
         </xAxis>
         <yAxis>
-            <NumberAxis label="Value"/>
+            <NumberAxis label="Value" />
         </yAxis>
     </BarChart>
 
     <!-- TableView for Simulation Data -->
-    <TableView fx:id="simulationTable" layoutX="50.0" layoutY="290.0" prefWidth="620.0" prefHeight="180.0">
+    <TableView fx:id="simulationTable" layoutX="50.0" layoutY="290.0" prefHeight="180.0" prefWidth="620.0">
         <columns>
-            <TableColumn text="Parameter" prefWidth="200.0"/>
-            <TableColumn text="Value" prefWidth="200.0"/>
-            <TableColumn text="Status" prefWidth="220.0"/>
+            <TableColumn prefWidth="200.0" text="Parameter" />
+            <TableColumn prefWidth="200.0" text="Value" />
+            <TableColumn prefWidth="220.0" text="Status" />
         </columns>
     </TableView>
+   <Button layoutX="350.0" layoutY="504.0" mnemonicParsing="false" onAction="#BackButton" text="Back" />
 
 </AnchorPane>

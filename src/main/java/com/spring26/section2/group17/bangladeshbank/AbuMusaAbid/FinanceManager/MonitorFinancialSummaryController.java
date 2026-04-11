@@ -1,5 +1,6 @@
 package com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.FinanceManager;
 
+import javafx.event.ActionEvent;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
@@ -25,4 +26,9 @@ public class MonitorFinancialSummaryController
 
     @javafx.fxml.FXML
     public void initialize() {
-    }}
+    }
+
+    @javafx.fxml.FXML
+    public void BackButton(ActionEvent actionEvent) {
+    }
+}

@@ -29,13 +29,17 @@ public class AccessAnalyticalDatasetsController
     public void initialize() {
     }
 
+
     @javafx.fxml.FXML
-    public void ButtonOA(ActionEvent actionEvent) {
+    public void ButtonOA(ActionEvent actionEvent)
+    {
+
         try{
             SceneSwitcher.switchTo("Towhid/DataAnalyst/DashboardDA.fxml");
         }
         catch (Exception e){
             e.printStackTrace();
         }
+
     }
 }

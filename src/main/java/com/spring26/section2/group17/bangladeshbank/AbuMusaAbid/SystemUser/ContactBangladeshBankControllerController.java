@@ -18,4 +18,8 @@ public class ContactBangladeshBankControllerController
     @javafx.fxml.FXML
     public void handleContactAction(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void BackButton(ActionEvent actionEvent) {
+    }
 }

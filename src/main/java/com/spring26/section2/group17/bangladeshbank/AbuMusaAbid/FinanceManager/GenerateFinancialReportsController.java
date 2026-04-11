@@ -1,5 +1,6 @@
 package com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.FinanceManager;
 
+import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -26,4 +27,9 @@ public class GenerateFinancialReportsController
 
     @javafx.fxml.FXML
     public void initialize() {
-    }}
+    }
+
+    @javafx.fxml.FXML
+    public void BackButton(ActionEvent actionEvent) {
+    }
+}
