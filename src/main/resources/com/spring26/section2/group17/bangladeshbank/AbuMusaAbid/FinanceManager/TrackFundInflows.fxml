@@ -10,10 +10,8 @@
 
 <AnchorPane prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.FinanceManager.TrackFundInflowsController">
 
-    <!-- Title -->
     <Label layoutX="220.0" layoutY="10.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Track Fund Inflows" />
 
-    <!-- Filters -->
     <Label layoutX="30.0" layoutY="50.0" text="Source:" />
     <ComboBox fx:id="sourceComboBox" layoutX="100.0" layoutY="45.0" prefWidth="150.0" />
 
@@ -25,7 +23,6 @@
 
     <Button fx:id="filterButton" layoutX="530.0" layoutY="80.0" prefWidth="100.0" text="Filter" />
 
-    <!-- Fund Inflows Table -->
     <TableView fx:id="fundTable" layoutX="30.0" layoutY="120.0" prefHeight="250.0" prefWidth="600.0">
         <columns>
             <TableColumn fx:id="sourceColumn" prefWidth="150.0" text="Source" />

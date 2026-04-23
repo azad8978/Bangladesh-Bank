@@ -8,20 +8,16 @@
 
 <AnchorPane prefHeight="439.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.SystemUser.ViewRegulationsandGuidelinesController">
 
-    <!-- Title -->
     <Label layoutX="30.0" layoutY="20.0" style="-fx-font-size: 22px; -fx-font-weight: bold;" text="View Regulations &amp; Guidelines" />
 
-    <!-- Documents Section -->
     <Label layoutX="30.0" layoutY="50.0" text="Documents:" />
 
     <ListView fx:id="documentListView" layoutX="30.0" layoutY="70.0" prefHeight="300.0" prefWidth="250.0" />
 
-    <!-- Document Content -->
     <Label layoutX="300.0" layoutY="50.0" text="Document Content:" />
 
     <TextArea fx:id="documentContentArea" layoutX="300.0" layoutY="70.0" prefHeight="300.0" prefWidth="360.0" wrapText="true" />
 
-    <!-- View Button -->
     <Button fx:id="viewButton" layoutX="30.0" layoutY="380.0" prefWidth="250.0" text="View Document" />
    <Button layoutX="457.0" layoutY="387.0" mnemonicParsing="false" onAction="#BackButton" prefHeight="26.0" prefWidth="66.0" text="Back" />
 

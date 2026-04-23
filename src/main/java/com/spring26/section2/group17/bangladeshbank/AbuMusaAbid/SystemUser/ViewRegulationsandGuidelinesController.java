@@ -26,29 +26,20 @@ public class ViewRegulationsandGuidelinesController {
     @FXML
     public void initialize() {
 
-        // Sample documents
         documentMap = new HashMap<>();
-
         documentMap.put("Banking Regulation Act",
                 "This act governs all banking operations...\n\nRules:\n1. Maintain liquidity\n2. Follow compliance");
-
         documentMap.put("Loan Policy Guidelines",
                 "Loan policy defines how loans are issued...\n\nSteps:\n1. Verify documents\n2. Approve credit");
-
         documentMap.put("Cyber Security Policy",
                 "Ensure protection of financial data...\n\nRules:\n1. Use strong passwords\n2. Monitor threats");
-
         documentMap.put("KYC Guidelines",
                 "Know Your Customer policy...\n\nSteps:\n1. Verify identity\n2. Maintain records");
 
-        // Add to ListView
         ObservableList<String> list = FXCollections.observableArrayList(documentMap.keySet());
         documentListView.setItems(list);
 
-        // Button action
         viewButton.setOnAction(this::viewDocument);
-
-        // Optional: double click to view
         documentListView.setOnMouseClicked(e -> {
             if (e.getClickCount() == 2) {
                 viewSelected();

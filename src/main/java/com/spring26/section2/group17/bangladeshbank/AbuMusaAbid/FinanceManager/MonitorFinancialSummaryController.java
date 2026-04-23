@@ -33,16 +33,13 @@ public class MonitorFinancialSummaryController {
     @FXML
     public void initialize() {
 
-        // ComboBox values
         timePeriodCombo.setItems(FXCollections.observableArrayList(
                 "Monthly", "Quarterly", "Yearly"
         ));
         timePeriodCombo.setValue("Monthly");
 
-        // Load initial data
         loadData("Monthly");
 
-        // Button action
         updateButton.setOnAction(e -> {
             String period = timePeriodCombo.getValue();
             loadData(period);
@@ -51,7 +48,6 @@ public class MonitorFinancialSummaryController {
 
     private void loadData(String period) {
 
-        // Clear charts
         revenueChart.getData().clear();
         expenditureChart.getData().clear();
 
@@ -59,7 +55,6 @@ public class MonitorFinancialSummaryController {
         double totalRevenue = 0;
         double totalExpense = 0;
 
-        // Sample data based on period
         if (period.equals("Monthly")) {
 
             series.getData().add(new XYChart.Data<>("Week1", 20000));
@@ -90,17 +85,14 @@ public class MonitorFinancialSummaryController {
             totalExpense = 1800000;
         }
 
-        // Add data to bar chart
         revenueChart.getData().add(series);
 
-        // Pie chart data
         expenditureChart.setData(FXCollections.observableArrayList(
                 new PieChart.Data("Operational", totalExpense * 0.5),
                 new PieChart.Data("Salary", totalExpense * 0.3),
                 new PieChart.Data("Maintenance", totalExpense * 0.2)
         ));
 
-        // Update labels
         totalRevenueLabel.setText("Total Revenue: " + totalRevenue);
         totalExpenditureLabel.setText("Total Expenditure: " + totalExpense);
 

@@ -29,23 +29,14 @@ public class ViewSimulationDashboardsController {
     @FXML
     public void initialize() {
 
-        // ComboBox data
-        timePeriodCombo.setItems(FXCollections.observableArrayList(
-                "Daily", "Weekly", "Monthly", "Yearly"
-        ));
-
-        scenarioCombo.setItems(FXCollections.observableArrayList(
-                "Best Case", "Normal Case", "Worst Case"
-        ));
-
+        timePeriodCombo.setItems(FXCollections.observableArrayList("Daily", "Weekly", "Monthly", "Yearly"));
+        scenarioCombo.setItems(FXCollections.observableArrayList("Best Case", "Normal Case", "Worst Case"));
         timePeriodCombo.setValue("Monthly");
         scenarioCombo.setValue("Normal Case");
 
-        // Table column binding
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         valueColumn.setCellValueFactory(new PropertyValueFactory<>("value"));
 
-        // Sample data
         simulationList.addAll(
                 new Simulation("Revenue", 5000),
                 new Simulation("Expense", 3000),
@@ -60,7 +51,6 @@ public class ViewSimulationDashboardsController {
     @FXML
     public void applyButtonOnAction(ActionEvent actionEvent) {
 
-        // regenerate data (demo purpose)
         simulationList.clear();
 
         simulationList.addAll(
@@ -85,7 +75,6 @@ public class ViewSimulationDashboardsController {
         barChart.getData().clear();
         barChart.getData().add(barSeries);
 
-        // LINE CHART
         XYChart.Series<String, Number> lineSeries = new XYChart.Series<>();
         lineSeries.setName("Trend");
 
@@ -107,9 +96,6 @@ public class ViewSimulationDashboardsController {
         }
     }
 
-    // =========================
-    // MODEL CLASS
-    // =========================
     public static class Simulation {
 
         private String name;

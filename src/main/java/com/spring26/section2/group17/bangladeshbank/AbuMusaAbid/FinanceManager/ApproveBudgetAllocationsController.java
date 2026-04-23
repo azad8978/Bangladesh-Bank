@@ -41,13 +41,12 @@ public class ApproveBudgetAllocationsController {
     @FXML
     public void initialize() {
 
-        // Set column values manually using index
+
         departmentColumn.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue()[0]));
         requestedByColumn.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue()[1]));
         purposeColumn.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue()[2]));
         amountColumn.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue()[3]));
 
-        // Sample data
         budgetList = FXCollections.observableArrayList(
                 new String[]{"IT", "Rahim", "System Upgrade", "50000"},
                 new String[]{"HR", "Karim", "Training Program", "20000"},
@@ -56,7 +55,6 @@ public class ApproveBudgetAllocationsController {
 
         budgetTable.setItems(budgetList);
 
-        // Show details when selected
         budgetTable.getSelectionModel().selectedItemProperty().addListener((obs, oldItem, newItem) -> {
             if (newItem != null) {
                 detailsArea.setText(

@@ -8,10 +8,8 @@
 
 <AnchorPane prefHeight="453.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.SystemUser.ContactBangladeshBankControllerController">
 
-    <!-- Title -->
     <Label layoutX="20.0" layoutY="20.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Contact Bangladesh Bank" />
 
-    <!-- Contact Details -->
     <Label layoutX="20.0" layoutY="70.0" text="Phone:" />
     <Label layoutX="150.0" layoutY="70.0" text="01883505410" />
 
@@ -21,15 +19,12 @@
     <Label layoutX="20.0" layoutY="150.0" text="Office:" />
     <Label layoutX="150.0" layoutY="150.0" text="Bashundhara R/A, Dhaka" />
 
-    <!-- Select Contact Method -->
     <Label layoutX="20.0" layoutY="200.0" text="Contact Method:" />
     <ComboBox fx:id="contactMethodComboBox" layoutX="150.0" layoutY="195.0" prefWidth="200.0" />
 
-    <!-- Message Area -->
     <Label layoutX="20.0" layoutY="240.0" text="Message:" />
     <TextArea fx:id="messageArea" layoutX="150.0" layoutY="240.0" prefHeight="80.0" prefWidth="300.0" />
 
-    <!-- Button -->
     <Button layoutX="230.0" layoutY="340.0" onAction="#handleContactAction" text="Contact Now" />
    <Button layoutX="495.0" layoutY="341.0" mnemonicParsing="false" onAction="#BackButton" text="Back" />
 
