@@ -4,4 +4,8 @@ public class GeneratePaymentPerformanceReportsController
 {
     @javafx.fxml.FXML
     public void initialize() {
-    }}
+    }
+
+    public GeneratePaymentPerformanceReportsController() {
+    }
+}

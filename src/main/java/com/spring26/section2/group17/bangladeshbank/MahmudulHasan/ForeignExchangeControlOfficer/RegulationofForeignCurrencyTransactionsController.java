@@ -29,6 +29,107 @@ public class RegulationofForeignCurrencyTransactionsController {
 
     private ObservableList<Transaction> transactions = FXCollections.observableArrayList();
 
+    public TextField getSenderField() {
+        return senderField;
+    }
+
+    public void setSenderField(TextField senderField) {
+        this.senderField = senderField;
+    }
+
+    public TextField getReceiverField() {
+        return receiverField;
+    }
+
+    public void setReceiverField(TextField receiverField) {
+        this.receiverField = receiverField;
+    }
+
+    public TextField getAmountField() {
+        return amountField;
+    }
+
+    public void setAmountField(TextField amountField) {
+        this.amountField = amountField;
+    }
+
+    public TextField getPurposeField() {
+        return purposeField;
+    }
+
+    public void setPurposeField(TextField purposeField) {
+        this.purposeField = purposeField;
+    }
+
+    public TableView<Transaction> getTransactionTable() {
+        return transactionTable;
+    }
+
+    public void setTransactionTable(TableView<Transaction> transactionTable) {
+        this.transactionTable = transactionTable;
+    }
+
+    public TableColumn<Transaction, String> getColSender() {
+        return colSender;
+    }
+
+    public void setColSender(TableColumn<Transaction, String> colSender) {
+        this.colSender = colSender;
+    }
+
+    public TableColumn<Transaction, String> getColReceiver() {
+        return colReceiver;
+    }
+
+    public void setColReceiver(TableColumn<Transaction, String> colReceiver) {
+        this.colReceiver = colReceiver;
+    }
+
+    public TableColumn<Transaction, Double> getColAmount() {
+        return colAmount;
+    }
+
+    public void setColAmount(TableColumn<Transaction, Double> colAmount) {
+        this.colAmount = colAmount;
+    }
+
+    public TableColumn<Transaction, String> getColPurpose() {
+        return colPurpose;
+    }
+
+    public void setColPurpose(TableColumn<Transaction, String> colPurpose) {
+        this.colPurpose = colPurpose;
+    }
+
+    public TableColumn<Transaction, String> getColStatus() {
+        return colStatus;
+    }
+
+    public void setColStatus(TableColumn<Transaction, String> colStatus) {
+        this.colStatus = colStatus;
+    }
+
+    public ObservableList<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(ObservableList<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
+    public RegulationofForeignCurrencyTransactionsController(TextField senderField, TextField receiverField, TextField amountField, TextField purposeField, TableView<Transaction> transactionTable, TableColumn<Transaction, String> colSender, TableColumn<Transaction, String> colReceiver, TableColumn<Transaction, Double> colAmount, TableColumn<Transaction, String> colPurpose, TableColumn<Transaction, String> colStatus, ObservableList<Transaction> transactions) {
+        this.senderField = senderField;
+        this.receiverField = receiverField;
+        this.amountField = amountField;
+        this.purposeField = purposeField;
+        this.transactionTable = transactionTable;
+        this.colSender = colSender;
+        this.colReceiver = colReceiver;
+        this.colAmount = colAmount;
+        this.colPurpose = colPurpose;
+        this.colStatus = colStatus;
+        this.transactions = transactions;
+    }
 
     @FXML
     public void initialize() {

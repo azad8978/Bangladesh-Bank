@@ -10,4 +10,8 @@ public class ManageElectronicFundTransfersController
 
     @javafx.fxml.FXML
     public void initialize() {
-    }}
+    }
+
+    public ManageElectronicFundTransfersController() {
+    }
+}

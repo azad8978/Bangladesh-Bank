@@ -41,4 +41,61 @@ public class OverseePaymentGatewayOperationsController
     @javafx.fxml.FXML
     public void handleLoadData(ActionEvent actionEvent) {
     }
+
+    public TextField getTxtTransactionId() {
+        return txtTransactionId;
+    }
+
+    public void setTxtTransactionId(TextField txtTransactionId) {
+        this.txtTransactionId = txtTransactionId;
+    }
+
+    public TableView getComplianceTable() {
+        return complianceTable;
+    }
+
+    public void setComplianceTable(TableView complianceTable) {
+        this.complianceTable = complianceTable;
+    }
+
+    public ComboBox getCmbRegulation() {
+        return cmbRegulation;
+    }
+
+    public void setCmbRegulation(ComboBox cmbRegulation) {
+        this.cmbRegulation = cmbRegulation;
+    }
+
+    public DatePicker getStartDate() {
+        return StartDate;
+    }
+
+    public void setStartDate(DatePicker startDate) {
+        StartDate = startDate;
+    }
+
+    public DatePicker getEndDate() {
+        return EndDate;
+    }
+
+    public void setEndDate(DatePicker endDate) {
+        EndDate = endDate;
+    }
+
+    public Label getLblStatus() {
+        return LblStatus;
+    }
+
+    public void setLblStatus(Label lblStatus) {
+        LblStatus = lblStatus;
+    }
+
+    public OverseePaymentGatewayOperationsController(TextField txtTransactionId, TableView complianceTable, ComboBox cmbRegulation, DatePicker startDate, DatePicker endDate, Label lblStatus) {
+        this.txtTransactionId = txtTransactionId;
+        this.complianceTable = complianceTable;
+        this.cmbRegulation = cmbRegulation;
+        StartDate = startDate;
+        EndDate = endDate;
+        LblStatus = lblStatus;
+    }
 }

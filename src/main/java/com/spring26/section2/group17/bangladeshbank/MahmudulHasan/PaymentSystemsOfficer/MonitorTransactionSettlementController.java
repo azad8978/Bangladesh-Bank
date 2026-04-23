@@ -4,4 +4,8 @@ public class MonitorTransactionSettlementController
 {
     @javafx.fxml.FXML
     public void initialize() {
-    }}
+    }
+
+    public MonitorTransactionSettlementController() {
+    }
+}
