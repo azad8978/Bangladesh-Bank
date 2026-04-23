@@ -1,5 +1,6 @@
 package com.spring26.section2.group17.bangladeshbank.MahmudulHasan.PaymentSystemsOfficer;
 
+import com.spring26.section2.group17.bangladeshbank.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
@@ -8,15 +9,9 @@ public class OverseePaymentGatewayOperationsController
     @javafx.fxml.FXML
     private TextField txtTransactionId;
     @javafx.fxml.FXML
-    private TableView complianceTable;
+    private TableView transactionTable;
     @javafx.fxml.FXML
-    private ComboBox cmbRegulation;
-    @javafx.fxml.FXML
-    private DatePicker StartDate;
-    @javafx.fxml.FXML
-    private DatePicker EndDate;
-    @javafx.fxml.FXML
-    private Label LblStatus;
+    private ComboBox cmbStatus;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -26,7 +21,7 @@ public class OverseePaymentGatewayOperationsController
     public void handleValidate(ActionEvent actionEvent) {
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void handleSearch(ActionEvent actionEvent) {
     }
 
@@ -38,64 +33,18 @@ public class OverseePaymentGatewayOperationsController
     public void handleProcess(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void handleLoadData(ActionEvent actionEvent) {
     }
 
-    public TextField getTxtTransactionId() {
-        return txtTransactionId;
-    }
 
-    public void setTxtTransactionId(TextField txtTransactionId) {
-        this.txtTransactionId = txtTransactionId;
-    }
-
-    public TableView getComplianceTable() {
-        return complianceTable;
-    }
-
-    public void setComplianceTable(TableView complianceTable) {
-        this.complianceTable = complianceTable;
-    }
-
-    public ComboBox getCmbRegulation() {
-        return cmbRegulation;
-    }
-
-    public void setCmbRegulation(ComboBox cmbRegulation) {
-        this.cmbRegulation = cmbRegulation;
-    }
-
-    public DatePicker getStartDate() {
-        return StartDate;
-    }
-
-    public void setStartDate(DatePicker startDate) {
-        StartDate = startDate;
-    }
-
-    public DatePicker getEndDate() {
-        return EndDate;
-    }
-
-    public void setEndDate(DatePicker endDate) {
-        EndDate = endDate;
-    }
-
-    public Label getLblStatus() {
-        return LblStatus;
-    }
-
-    public void setLblStatus(Label lblStatus) {
-        LblStatus = lblStatus;
-    }
-
-    public OverseePaymentGatewayOperationsController(TextField txtTransactionId, TableView complianceTable, ComboBox cmbRegulation, DatePicker startDate, DatePicker endDate, Label lblStatus) {
-        this.txtTransactionId = txtTransactionId;
-        this.complianceTable = complianceTable;
-        this.cmbRegulation = cmbRegulation;
-        StartDate = startDate;
-        EndDate = endDate;
-        LblStatus = lblStatus;
+    @javafx.fxml.FXML
+    public void backButton(ActionEvent actionEvent) {
+        try{
+            SceneSwitcher.switchTo("/com/spring26/section2/group17/bangladeshbank/MahmudulHasan/PaymentSystemsOfficer/Deshbord.fxml");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

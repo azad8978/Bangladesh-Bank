@@ -2,6 +2,7 @@ package com.spring26.section2.group17.bangladeshbank.MahmudulHasan.PaymentSystem
 
 import com.spring26.section2.group17.bangladeshbank.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 
 public class DeshbordController {
     @javafx.fxml.FXML
@@ -29,7 +30,7 @@ public class DeshbordController {
     @javafx.fxml.FXML
     public void OverseePaymentGatewayOperations(ActionEvent actionEvent) {
         try {
-            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/OverseePaymentGatewayOperations.fxml");
+            SceneSwitcher.switchTo("/com/spring26/section2/group17/bangladeshbank/MahmudulHasan/PaymentSystemsOfficer/OverseePaymentGatewayOperations.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -65,7 +66,7 @@ public class DeshbordController {
     @javafx.fxml.FXML
     public void MonitorFraudRisk(ActionEvent actionEvent) {
         try {
-            SceneSwitcher.switchTo("MahmudulHasan/PaymentSystemsOfficer/MonitorFraud&Risk.fxml");
+            SceneSwitcher.switchTo("/com/spring26/section2/group17/bangladeshbank/MahmudulHasan/PaymentSystemsOfficer/MonitorFraud&Risk.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }

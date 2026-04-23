@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="580.0" prefWidth="793.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.MahmudulHasan.PaymentSystemsOfficer.MonitorFraudRiskController">
     <children>
@@ -71,6 +72,10 @@
 
         </TableView>
         <Line endX="397.00006103515625" layoutX="396.0" layoutY="43.0" startX="-399.7166442871094" />
+      <Button layoutX="708.0" layoutY="12.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: red; -fx-text-fill: white;" text="Back">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
 
     </children>
 

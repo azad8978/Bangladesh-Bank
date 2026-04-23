@@ -1,5 +1,7 @@
 package com.spring26.section2.group17.bangladeshbank.MahmudulHasan.PaymentSystemsOfficer;
 
+import com.spring26.section2.group17.bangladeshbank.SceneSwitcher;
+import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
 public class MonitorFraudRiskController
@@ -89,15 +91,14 @@ public class MonitorFraudRiskController
         this.statusLabel = statusLabel;
     }
 
-
-    public MonitorFraudRiskController(TableView reportTable, ProgressIndicator progressIndicator, Button processBtn, ComboBox moduleComboBox, Button validateBtn, Button verifyBtn, TextField transactionField, Label statusLabel) {
-        this.reportTable = reportTable;
-        this.progressIndicator = progressIndicator;
-        this.processBtn = processBtn;
-        this.moduleComboBox = moduleComboBox;
-        this.validateBtn = validateBtn;
-        this.verifyBtn = verifyBtn;
-        this.transactionField = transactionField;
-        this.statusLabel = statusLabel;
+    @javafx.fxml.FXML
+    public void backButton(ActionEvent actionEvent)
+    {
+        try{
+            SceneSwitcher.switchTo("/com/spring26/section2/group17/bangladeshbank/MahmudulHasan/PaymentSystemsOfficer/Deshbord.fxml");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

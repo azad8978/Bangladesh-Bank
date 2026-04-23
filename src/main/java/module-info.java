@@ -1,6 +1,9 @@
 module com.spring26.section2.group17.bangladeshbank {
     requires javafx.controls;
     requires javafx.fxml;
+//    requires com.spring26.section2.group17.bangladeshbank;
+//    requires com.spring26.section2.group17.bangladeshbank;
+//    requires com.spring26.section2.group17.bangladeshbank;
 
 
     opens com.spring26.section2.group17.bangladeshbank to javafx.fxml;
