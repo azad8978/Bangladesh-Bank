@@ -30,7 +30,6 @@ public class TrackRequestStatusController {
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        // Sample data
         requestList.addAll(
                 new Request("R001", "Loan Request", "2026-04-01", "Pending",
                         "Submitted → Under Review → Waiting Approval"),
@@ -44,7 +43,6 @@ public class TrackRequestStatusController {
 
         requestTable.setItems(requestList);
 
-        // Row selection listener
         requestTable.getSelectionModel().selectedItemProperty().addListener(
                 (obs, oldSelection, newSelection) -> {
                     if (newSelection != null) {
@@ -65,9 +63,6 @@ public class TrackRequestStatusController {
         }
     }
 
-    // =========================
-    // MODEL CLASS
-    // =========================
     public static class Request {
 
         private String id;

@@ -42,18 +42,15 @@ public class TrackRevenueSourcesController {
     @FXML
     public void initialize() {
 
-        // Set column mapping
         sourceNameColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue()[0]));
         amountColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue()[1]));
         dateColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue()[2]));
 
-        // ComboBox values
         sourceComboBox.setItems(FXCollections.observableArrayList(
                 "All", "Tax", "Investment", "Service Fees"
         ));
         sourceComboBox.setValue("All");
 
-        // Sample data
         revenueList = FXCollections.observableArrayList(
                 new String[]{"Tax", "50000", "2026-04-01"},
                 new String[]{"Investment", "30000", "2026-04-02"},
@@ -63,7 +60,6 @@ public class TrackRevenueSourcesController {
 
         revenueTable.setItems(revenueList);
 
-        // Calculate total
         calculateTotal(revenueList);
     }
 
@@ -82,7 +78,6 @@ public class TrackRevenueSourcesController {
 
             boolean matchDate = true;
 
-            // Simple date filtering (string compare works for YYYY-MM-DD)
             if (!fromDate.isEmpty() && row[2].compareTo(fromDate) < 0) {
                 matchDate = false;
             }

@@ -25,9 +25,6 @@ public class ProvideFeedbackController {
         String email = emailField.getText();
         String feedback = feedbackArea.getText();
 
-        // ======================
-        // VALIDATION
-        // ======================
         if (name.isEmpty() || email.isEmpty() || feedback.isEmpty()) {
             confirmationLabel.setText("⚠ Please fill all fields!");
             return;
@@ -43,9 +40,6 @@ public class ProvideFeedbackController {
             return;
         }
 
-        // ======================
-        // SUCCESS ACTION
-        // ======================
         confirmationLabel.setText("✅ Feedback submitted successfully!");
 
         // Clear form

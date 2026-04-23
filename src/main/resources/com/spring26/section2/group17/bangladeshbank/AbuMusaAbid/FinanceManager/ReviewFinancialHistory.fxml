@@ -10,10 +10,8 @@
 
 <AnchorPane prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.FinanceManager.ReviewFinancialHistoryController">
 
-    <!-- Title -->
     <Label layoutX="200.0" layoutY="10.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Financial History" />
 
-    <!-- Filters -->
     <Label layoutX="40.0" layoutY="60.0" text="From Date:" />
     <TextField fx:id="fromDateField" layoutX="120.0" layoutY="55.0" prefWidth="120.0" />
 
@@ -25,7 +23,6 @@
 
     <Button fx:id="searchButton" layoutX="520.0" layoutY="90.0" prefWidth="110.0" text="Search" />
 
-    <!-- Table -->
     <TableView fx:id="historyTable" layoutX="40.0" layoutY="130.0" prefHeight="220.0" prefWidth="590.0">
 
         <columns>
@@ -37,7 +34,6 @@
 
     </TableView>
 
-    <!-- Status Message -->
     <Label fx:id="statusLabel" layoutX="40.0" layoutY="370.0" style="-fx-text-fill: green;" text="" />
    <Button layoutX="536.0" layoutY="387.0" mnemonicParsing="false" onAction="#BackButton" text="Back" />
 

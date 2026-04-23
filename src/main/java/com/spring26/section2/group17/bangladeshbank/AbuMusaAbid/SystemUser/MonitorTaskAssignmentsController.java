@@ -24,13 +24,11 @@ public class MonitorTaskAssignmentsController {
     @FXML
     public void initialize() {
 
-        // Column binding
         taskIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         deadlineColumn.setCellValueFactory(new PropertyValueFactory<>("deadline"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        // Sample tasks
         taskList.addAll(
                 new Task("T001", "Prepare Financial Report", "2026-04-15", "Pending",
                         "Prepare full quarterly financial report with charts."),
@@ -44,7 +42,6 @@ public class MonitorTaskAssignmentsController {
 
         taskTable.setItems(taskList);
 
-        // Row selection listener
         taskTable.getSelectionModel().selectedItemProperty().addListener(
                 (obs, oldSelection, newSelection) -> {
                     if (newSelection != null) {
@@ -70,9 +67,6 @@ public class MonitorTaskAssignmentsController {
         }
     }
 
-    // =========================
-    // MODEL CLASS
-    // =========================
     public static class Task {
 
         private String id;

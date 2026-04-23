@@ -9,10 +9,8 @@
 
 <AnchorPane prefHeight="452.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group17.bangladeshbank.AbuMusaAbid.SystemUser.TrackRequestStatusController">
 
-    <!-- Title -->
     <Label layoutX="200.0" layoutY="10.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Track Request Status" />
 
-    <!-- TableView for Requests -->
     <TableView fx:id="requestTable" layoutX="50.0" layoutY="50.0" prefHeight="200.0" prefWidth="500.0">
         <columns>
             <TableColumn fx:id="idColumn" prefWidth="100.0" text="Request ID" />
@@ -22,10 +20,8 @@
         </columns>
     </TableView>
 
-    <!-- Timeline Label -->
     <Label layoutX="50.0" layoutY="270.0" text="Request Timeline:" />
 
-    <!-- TextArea to show timeline -->
     <TextArea fx:id="timelineArea" editable="false" layoutX="50.0" layoutY="290.0" prefHeight="90.0" prefWidth="500.0" />
    <Button layoutX="253.0" layoutY="399.0" mnemonicParsing="false" onAction="#BackButton" text="Back" />
 
